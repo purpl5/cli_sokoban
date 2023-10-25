@@ -4,7 +4,8 @@ EXEC = main
 OBJETS = obj/main.o
 $(EXEC) : $(OBJETS)
 	$(CC) $(CFLAGS) -o $@ $^ -lm 
-	rm .\obj\*.o
 obj/%.o : src/%.c 
 	$(CC) $(CFLAGS) -c $< 
 	mv *.o ./obj
+clean :
+	rm ./obj/*.o ./main
