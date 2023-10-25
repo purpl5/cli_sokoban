@@ -1,0 +1,3 @@
+PROJECT_NAME = ProjetTechDev
+OUTPUT_DIRECTORY = doc
+INPUT = src/*.c
