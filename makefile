@@ -3,10 +3,8 @@ CFLAGS = -W -Wall
 EXEC = main 
 OBJETS = obj/*.o
 
-
 $(EXEC) : $(OBJETS)
 	$(CC) $(CFLAGS) -o $@ $^ -lm 
-
 
 obj/%.o : src/%.c 	
 	mkdir obj 
@@ -25,6 +23,3 @@ doxygen :
 clean :
 	rm ./main
 	rm -rf ./obj ./doc
-
-
-
