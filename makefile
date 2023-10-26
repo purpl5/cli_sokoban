@@ -3,7 +3,7 @@ CC = gcc -g
 CFLAGS = -W -Wall 
 EXEC = main 
 OBJETS = obj/*.o
-ARCFILE = archive-$(shell date +%F-%H-%M-%S).tar
+ARCFILENAME = archive-$(shell date +%F-%H-%M-%S).tar
 
 #Compile le programme en fonction de EXEC, OBJETS, CC, CFLAGS
 $(EXEC) : $(OBJETS)
@@ -19,11 +19,11 @@ obj/%.o : src/%.c
 #Permets de dire au makefile que les target donner ne sont pas des "file targets" conçu pour créer des fichiers 
 #par le biais d'autres fichiers, mais juste de dire a makefile que ces target sont juste fait pour lancer des 
 #commandes. 
-.PHONY : archive clean doxygen test flush_log
+.PHONY : archive clean doxygen
 
 #Lance le script shell permettant de créer l'archive, contenant la date de création pour les différencier
 archive :  
-	tar -cf ./archive/$(ARCFILE) ./header ./src ./doc makefile doxyfile
+	tar -cf ./archive/$(ARCFILENAME) ./header ./src ./doc makefile doxyfile
 
 #Créer le dossier doc "temporaire" qui est créer lors de l'utilisation de la target et est supprimer lorsque
 #nous utilisons le clean.
