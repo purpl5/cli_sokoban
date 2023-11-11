@@ -1,3 +1,4 @@
 PROJECT_NAME = ProjetTechDev
 OUTPUT_DIRECTORY = doc
-INPUT = src/*.c
+INPUT = src/*.c header/*.h
+EXCLUDE = archive/
