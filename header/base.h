@@ -9,4 +9,7 @@
 //#include <math.h>
 //#include <string.h>
 
+// Header 
+#include "./fonc.h"
+
 #endif
