@@ -1,23 +1,23 @@
 #pragma once
-#ifndef LEVELSELECTOR
-#define LEVELSELECTOR
+#ifndef LEVEL_SELECTOR
+#define LEVEL_SELECTOR
 
 // Bibliothèque spécifique au levelSelector.C
 #include <dirent.h>
 #include <string.h>
 
 // typedef 
-typedef struct level {
+typedef struct LevelFile {
     char* name; 
-    struct level* next;
-} Level;
+    struct LevelFile* next;
+} LevelFile;
 
 // Les profils 
-Level* listLevel();
-Level* stockLevel(Level* list, char* namefile);
-Level* newList();
-void afficherLevel(Level* list);
-char* iemeLevel(Level* list, int i);
-char* choixLevel();
+LevelFile* listLevelFile();
+LevelFile* stockLevelFile(LevelFile* list, char* namefile);
+LevelFile* newList();
+void afficherLevelFile(LevelFile* list);
+char* iemeLevel(LevelFile* list, int i);
+char* choixLevelFile();
 
 #endif 
