@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "levelselector.h": "c",
+        "base.h": "c"
+    }
+}

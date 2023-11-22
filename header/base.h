@@ -7,9 +7,5 @@
 #include <stdlib.h>
 //#include <stdbool.h>
 //#include <math.h>
-//#include <string.h>
-
-// Header 
-#include "./fonc.h"
 
 #endif
