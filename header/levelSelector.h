@@ -19,5 +19,6 @@ LevelFile* newList();
 void afficherLevelFile(LevelFile* list);
 char* iemeLevel(LevelFile* list, int i);
 char* choixLevelFile();
+void freeAllLevel(LevelFile* list);
 
 #endif 

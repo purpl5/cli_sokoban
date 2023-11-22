@@ -19,5 +19,6 @@ int nbColFinder(char* filename);
 int nbLigFinder(char* filename);
 void afficherLevel(Level* l);
 Level* loader(char* filename);
+void freeTab(Level* list);
 
 #endif

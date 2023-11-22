@@ -1,6 +1,28 @@
 #include "../header/base.h"
 #include "../header/levelLoading.h"
 
+/*
+*  Nom :
+*  Précondition : 
+*  Effet de bord : 
+*  Argument : 
+*  Explication de la fonction : 
+*  Retour : 
+*/
+
+// ---------------------------------------
+
+/*
+*  Nom : newLevel
+*  Précondition : aucune 
+*  Effet de bord : aucune 
+*  Argument : 
+*     - nbColonne : le nombre de colonne que l'on veux dans notre tableau
+*     - nbLigne : le nombre de ligne que l'on veux dans notre tableau
+*  Explication de la fonction : la fonction va allouer notre tableau et initaliser chaque varible d'une variable de type LevelFile (concrètement ligne et colonne)
+*  Retour : renvoie le level entièrement initaliser 
+*/
+
 Level* newLevel(int nbColonne, int nbLigne) {
     Level* l = (Level*) malloc(sizeof(Level)); 
 
@@ -16,6 +38,18 @@ Level* newLevel(int nbColonne, int nbLigne) {
     return l; 
 }
 
+// ---------------------------------------
+
+/*
+*  Nom : pathFinder
+*  Précondition : aucun
+*  Effet de bord :  aucun 
+*  Argument : 
+*     - filename : nom du fichier a ajouter dans le chemi 
+*  Explication de la fonction : va créer une variable path qui va contenir le chemin vers le level qui à son nom stocker dans filename 
+*  Retour : retournele chemin 
+*/
+
 char* pathFinder(char* filename) {
     char *base = "./level/";
     char *path = (char*) malloc((strlen(base) + strlen(filename) + 1) * sizeof(char));
@@ -24,6 +58,18 @@ char* pathFinder(char* filename) {
 
     return path; 
 }
+
+// ---------------------------------------
+
+/*
+*  Nom : nbColFinder
+*  Précondition : le fichier doit être accessible en lecture et avoir la même longueur pour chaque ligne sinon la fonction renverra possiblement une valeur fausse 
+*  Effet de bord : aucune 
+*  Argument : 
+*     - filename : nom de fichier 
+*  Explication de la fonction : la fonction va cherche le nombre d'element dans la premièrme ligne du fichier 
+*  Retour : va renvoyer nbColonne qui signifie le nombre d'élement dans la première ligne 
+*/
 
 int nbColFinder(char* filename) {
     FILE *fichier;
@@ -43,6 +89,8 @@ int nbColFinder(char* filename) {
     }
 
     free(path); 
+
+    fclose(fichier);
 
     return nbColonne;
 }
@@ -69,6 +117,8 @@ int nbLigFinder(char* filename) {
 
     free(path); 
 
+    fclose(fichier);
+
     return nbLigne;
 }
 
@@ -90,6 +140,8 @@ Level* loader(char* filename) {
 
     fichier = fopen(path, "r");
 
+    free(path);
+
     if (fichier == NULL) {
         printf("erreur");
         return (Level*) NULL;
@@ -108,5 +160,17 @@ Level* loader(char* filename) {
         
     }
 
+    fclose(fichier); 
+
+    
+
     return l;
+}
+
+void freeTab(Level* l) {
+    for (int i = 0; i < l->ligne; i++) {
+        free(l->tab[i]);
+    }
+    
+    free(l->tab);
 }

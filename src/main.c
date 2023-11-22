@@ -10,5 +10,8 @@ int main() {
     Level* l = loader(nomLevel);
 
     afficherLevel(l); 
+
+    freeTab(l);
+    free(l); 
     return EXIT_SUCCESS;
 }
