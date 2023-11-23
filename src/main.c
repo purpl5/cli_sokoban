@@ -11,7 +11,7 @@ int main() {
 
     afficherLevel(l); 
 
-    freeTab(l);
-    free(l); 
+    freeLevel(l);
+
     return EXIT_SUCCESS;
 }

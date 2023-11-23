@@ -1,15 +1,6 @@
 #include "../header/base.h"
 #include "../header/levelLoading.h"
 
-/*
-*  Nom :
-*  Précondition : 
-*  Effet de bord : 
-*  Argument : 
-*  Explication de la fonction : 
-*  Retour : 
-*/
-
 // ---------------------------------------
 
 /*
@@ -64,7 +55,7 @@ char* pathFinder(char* filename) {
 /*
 *  Nom : nbColFinder
 *  Précondition : le fichier doit être accessible en lecture et avoir la même longueur pour chaque ligne sinon la fonction renverra possiblement une valeur fausse 
-*  Effet de bord : aucune 
+*  Effet de bord : aucun
 *  Argument : 
 *     - filename : nom de fichier 
 *  Explication de la fonction : la fonction va cherche le nombre d'element dans la premièrme ligne du fichier 
@@ -95,6 +86,17 @@ int nbColFinder(char* filename) {
     return nbColonne;
 }
 
+// ---------------------------------------
+
+/*
+*  Nom : nbLigFinder
+*  Précondition : le fichier doit être accessible en lecture
+*  Effet de bord : aucun
+*  Argument : 
+*     - filename : nom de fichier 
+*  Explication de la fonction : La fonction va chercher le nombre de retour a la ligne qu'il y a dans le fichier 
+*  Retour : renvoie le nb de retour a la ligne dans le fichier de nom filename 
+*/
 
 int nbLigFinder(char* filename) {
     FILE *fichier;
@@ -122,6 +124,18 @@ int nbLigFinder(char* filename) {
     return nbLigne;
 }
 
+// ---------------------------------------
+
+/*
+*  Nom : afficherLevel
+*  Précondition : l ne doit pas être vide
+*  Effet de bord : va afficher tout les élément du tableau
+*  Argument : 
+*     - l : est la varible contenant les caractéristique du level
+*  Explication de la fonction : va afficher tout les élément du tableau
+*  Retour : aucun, c'est une procédure
+*/
+
 void afficherLevel(Level* l) {
     for (int i = 0; i < l->ligne; i++) {
         for(int j = 0; j < l->colonne; j++) {
@@ -130,6 +144,18 @@ void afficherLevel(Level* l) {
         printf("\n");
     }
 }
+
+// ---------------------------------------
+
+/*
+*  Nom : loader
+*  Précondition : le fichier (de nom filename) doit être accessible en lecture
+*  Effet de bord : aucun
+*  Argument : 
+*     - filename : nom du fichier à load dans une variable
+*  Explication de la fonction : initalise une variable de type Level* en fonction des caractéristique du fichier (qui a le nom stocker pour filename)
+*  Retour : renvoie la variable totalement initialiser 
+*/
 
 Level* loader(char* filename) {
     FILE *fichier; 
@@ -162,10 +188,20 @@ Level* loader(char* filename) {
 
     fclose(fichier); 
 
-    
-
     return l;
 }
+
+// ---------------------------------------
+
+/*
+*  Nom : freeTab
+*  Précondition : l ne doit pas être NULL
+*  Effet de bord : aucun 
+*  Argument : 
+*     - l : est la varible contenant les caractéristique du level
+*  Explication de la fonction : permet de free tout le tableau dans l
+*  Retour : aucun c'est une procédure
+*/
 
 void freeTab(Level* l) {
     for (int i = 0; i < l->ligne; i++) {
@@ -173,4 +209,21 @@ void freeTab(Level* l) {
     }
     
     free(l->tab);
+}
+
+// ---------------------------------------
+
+/*
+*  Nom : freeLevel
+*  Précondition : l ne doit pas être NULL
+*  Effet de bord : aucun
+*  Argument : 
+*     - l : est la varible contenant les caractéristique du level
+*  Explication de la fonction : permet de free l 
+*  Retour : aucun c'est une procédure
+*/
+
+void freeLevel(Level* l) {
+    freeTab(l);
+    free(l); 
 }

@@ -129,7 +129,7 @@ void afficherLevelFile(LevelFile* list) {
 // ---------------------------------------
 
 /*
-*  Nom : freeAllLevel
+*  Nom : freeAllLevelFile
 *  Précondition : aucune 
 *  Effet de bord : aucun 
 *  Argument : La liste que l'on veux free
@@ -137,7 +137,7 @@ void afficherLevelFile(LevelFile* list) {
 *  Retour : ne renvoie rien, c'est une procédure 
 */
 
-void freeAllLevel(LevelFile* list) {
+void freeAllLevelFile(LevelFile* list) {
     while (list != NULL) {
         LevelFile* suppr = list; 
         list = list->next; 
@@ -170,7 +170,7 @@ char* choixLevelFile() {
 
     char* levelName = iemeLevelFile(allLevel, idLevel);
 
-    freeAllLevel(allLevel);
+    freeAllLevelFile(allLevel);
 
     return levelName;
 }

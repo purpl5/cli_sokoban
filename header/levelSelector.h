@@ -7,6 +7,18 @@
 #include <string.h>
 
 // typedef 
+
+/*
+*  Nom du type : LevelFile
+*  Contenu : 
+*     - name : nom du fichier
+*     - next : c'est une liste chainée, c'est donc l'élément suivant du tableau
+*  Initialisation :
+*     - newList()
+*  Free : 
+*     - freeAllLevel()
+*/
+
 typedef struct LevelFile {
     char* name; 
     struct LevelFile* next;
@@ -19,6 +31,6 @@ LevelFile* newList();
 void afficherLevelFile(LevelFile* list);
 char* iemeLevel(LevelFile* list, int i);
 char* choixLevelFile();
-void freeAllLevel(LevelFile* list);
+void freeAllLevelFile(LevelFile* list);
 
 #endif 
