@@ -8,4 +8,8 @@ typedef struct Position {
     int y; 
 } Position;
 
+// profil 
+Position* initPos(Position* p, int x, int y);
+void freePos(Position* p);
+
 #endif 

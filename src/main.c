@@ -2,6 +2,7 @@
 #include "../header/levelSelector.h"
 #include "../header/levelLoading.h"
 #include "../header/emplacement.h"
+#include "../header/player.h"
 
 int main() {
 
@@ -16,13 +17,16 @@ int main() {
    
     Level* l = loader(nomLevel);
     FileEmplacement* f = rechercheEmplacement(l); 
+    Player* p = recherchePlayer(l); 
 
     afficherLevel(l); 
     afficherEmplacement(f); 
+    afficherPlayer(p);
 
     // Tout les free 
     freeLevel(l);
     freeEmplacement(f);
+    freePlayer(p); 
 
     return EXIT_SUCCESS;
 }

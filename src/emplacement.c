@@ -1,6 +1,7 @@
 #include "../header/base.h"
 #include "../header/levelLoading.h"
 #include "../header/emplacement.h"
+#include "../header/position.h"
 
 FileEmplacement* newEmplacement() {
     return (FileEmplacement*) NULL;
@@ -12,9 +13,7 @@ bool emplacementVide(FileEmplacement* f) {
 
 FileEmplacement* ajoutEmplacement(int x, int y, FileEmplacement* f) {
     FileEmplacement* new = (FileEmplacement*) malloc(sizeof(FileEmplacement)); 
-    new->p = (Position*) malloc(sizeof(Position)); 
-    new->p->x = x; 
-    new->p->y = y; 
+    new->p = initPos(new->p, x, y); 
 
     if (emplacementVide(f)) {
         new->next == (FileEmplacement*) NULL;
@@ -46,8 +45,10 @@ FileEmplacement* rechercheEmplacement(Level* l) {
 }
 
 void afficherEmplacement(FileEmplacement* f) {
+    int i = 0; 
     for (FileEmplacement* tmp = f; tmp != (FileEmplacement*) NULL; tmp = tmp->next) {
-        printf("x : %d et y : %d\n", tmp->p->x, tmp->p->y); 
+        printf("L'emplacement %d est à la position : x : %d et y : %d\n", i, tmp->p->x, tmp->p->y); 
+        i++; 
     }
 }
 
@@ -55,7 +56,7 @@ void freeEmplacement(FileEmplacement* f) {
     while (f != (FileEmplacement*) NULL) {
         FileEmplacement* suppr = f; 
         f = f->next; 
-        free(suppr->p);
+        freePos(suppr->p); 
         free(suppr);
     }
 }
