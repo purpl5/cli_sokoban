@@ -168,10 +168,10 @@ char* choixLevelFile() {
     scanf("%d", &idLevel);
     printf("Vous avez donc choisis de jouer le LevelFile : %s\n", iemeLevelFile(allLevel, idLevel));
 
-    char* levelName = iemeLevelFile(allLevel, idLevel);
+    char* levelName = strdup(iemeLevelFile(allLevel, idLevel));
 
     freeAllLevelFile(allLevel);
-
+    
     return levelName;
 }
 

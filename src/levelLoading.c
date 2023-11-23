@@ -104,7 +104,7 @@ int nbLigFinder(char* filename) {
     char* path = pathFinder(filename); 
 
     fichier = fopen(path, "r"); 
-
+    
     if (fichier == NULL) {
         printf("erreur, on arrive pas a ouvrir le fichier en question"); 
     }
@@ -161,8 +161,12 @@ Level* loader(char* filename) {
     FILE *fichier; 
     int nbLigne = nbLigFinder(filename), nbColonne = nbColFinder(filename);
 
+
+
     Level* l = newLevel(nbColonne, nbLigne); 
     char* path = pathFinder(filename);
+
+    free(filename);
 
     fichier = fopen(path, "r");
 
@@ -174,7 +178,7 @@ Level* loader(char* filename) {
     }
     
     char ch = fgetc(fichier);
-     
+    
     for (int i = 0; i < l->ligne; i++) {
         for(int j = 0; j < l->colonne; j++, ch = fgetc(fichier)) {
             if (ch == '\n') {
@@ -185,7 +189,7 @@ Level* loader(char* filename) {
         }
         
     }
-
+    
     fclose(fichier); 
 
     return l;
