@@ -2,6 +2,7 @@
 #include "../header/levelLoading.h"
 #include "../header/emplacement.h"
 #include "../header/position.h"
+#include "../header/jeu.h"
 
 FileEmplacement* newEmplacement() {
     return (FileEmplacement*) NULL;

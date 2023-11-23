@@ -19,4 +19,5 @@ FileEmplacement* ajoutEmplacement(int x, int y, FileEmplacement* f);
 FileEmplacement* rechercheEmplacement(Level* l);
 void afficherEmplacement(FileEmplacement* f);
 void freeEmplacement(FileEmplacement* f);
+
 #endif

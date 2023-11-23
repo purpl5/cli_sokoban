@@ -15,5 +15,7 @@ typedef struct Player {
 Player* recherchePlayer(Level *l);
 void freePlayer(Player* p);
 void afficherPlayer(Player* p);
+void deplacementPlayerX(Player* p, Level* l, int sens);
+void deplacementPlayerY(Player* p, Level* l, int sens);
 
 #endif

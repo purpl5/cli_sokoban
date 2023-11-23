@@ -3,6 +3,7 @@
 #include "../header/levelLoading.h"
 #include "../header/emplacement.h"
 #include "../header/player.h"
+#include "../header/jeu.h"
 
 int main() {
 
@@ -14,19 +15,21 @@ int main() {
     *  l = contient tout le level au quelle on veux jouer 
     *  f = contient tout les emplacement sur lesquelle nous devons mettre des bloc (important de stocker ces informations)
     */
+    Jeu * j = (Jeu*) malloc(sizeof(Jeu));
    
-    Level* l = loader(nomLevel);
-    FileEmplacement* f = rechercheEmplacement(l); 
-    Player* p = recherchePlayer(l); 
+    j->l = loader(nomLevel);
+    j->f = rechercheEmplacement(j->l); 
+    j->p = recherchePlayer(j->l); 
 
-    afficherLevel(l); 
-    afficherEmplacement(f); 
-    afficherPlayer(p);
+    afficherLevel(j->l); 
+    afficherEmplacement(j->f); 
+    afficherPlayer(j->p);
 
     // Tout les free 
-    freeLevel(l);
-    freeEmplacement(f);
-    freePlayer(p); 
+    freeLevel(j->l);
+    freeEmplacement(j->f);
+    freePlayer(j->p); 
+    free(j); 
 
     return EXIT_SUCCESS;
 }
