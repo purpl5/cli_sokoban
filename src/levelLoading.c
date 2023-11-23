@@ -1,5 +1,6 @@
 #include "../header/base.h"
 #include "../header/levelLoading.h"
+#include "../header/os.h"
 
 // ---------------------------------------
 
@@ -137,6 +138,13 @@ int nbLigFinder(char* filename) {
 */
 
 void afficherLevel(Level* l) {
+
+    if (OS_NUMBER == 1) {
+        system("clear"); 
+    } else if (OS_NUMBER == 0) {
+        system("cls"); 
+    }
+    
     for (int i = 0; i < l->ligne; i++) {
         for(int j = 0; j < l->colonne; j++) {
             printf("%c", l->tab[i][j]); 

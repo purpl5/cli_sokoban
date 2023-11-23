@@ -8,20 +8,14 @@
 #include "../header/player.h"
 #include <string.h>
 
-
 // typedef 
 typedef struct Jeu {
     Level* l; 
     FileEmplacement* f;
-    Player* p;
-
-    int nbEmplacement;
-    int nbBlocSurEmplacement;
+    Player* pl;
 } Jeu; 
 
 // profil 
-Jeu* launchGame(Jeu* j);
-void endGame(Jeu* j);
-void game();
+void gameOn(Jeu* j);
 
 #endif

@@ -1,16 +1,24 @@
-#include "../header/base.h"
 #include "../header/bloc.h"
-#include "../header/position.h"
-#include "../header/levelLoading.h"
-#include "../header/jeu.h"
 
-/*
-void deplacementBlocX(Position* p, Jeu* j, int sens) {
+void deplacementBlocY(Level* l, FileEmplacement* f, Position* p, int sens) {
+    if (estUnEmplacement(f, p)) {
+        l->tab[p->y][p->x] = 'o'; 
+    } else {
+        l->tab[p->y][p->x] = ' '; 
+    }
+
+    p->y += sens; 
+    l->tab[p->y][p->x] = 'p'; 
 
 }
 
-void deplacementBlocY(Position* p, Jeu* l, int sens) {
+void deplacementBlocX(Level* l, FileEmplacement* f, Position* p, int sens) {
+    if (estUnEmplacement(f, p)) {
+        l->tab[p->y][p->x] = 'o'; 
+    } else {
+        l->tab[p->y][p->x] = ' '; 
+    }
 
-
+    p->x += sens; 
+    l->tab[p->y][p->x] = 'p'; 
 }
-*/

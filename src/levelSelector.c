@@ -25,7 +25,7 @@ LevelFile* newList() {
 *  Argument : 
 *     - list : la list dans laquelle on veux stocker le Level 
 *     - namefile : le nom du level
-*  Explication de la fonction : la fonction va nous premettre de stocker un nouveal level a la fin de la list  
+*  Explication de la fonction : la fonction va nous premettre de stocker un nouveal level & la fin de la list  
 *  Retour : renvoie la list avec le nouveau level à la dernière position
 */
 
@@ -165,7 +165,7 @@ char* choixLevelFile() {
     afficherLevelFile(allLevel); 
 
     printf("Veillez choisir quelle Level vous voulez jouer :");
-    scanf("%d", &idLevel);
+    scanf("\n%d", &idLevel);
     printf("Vous avez donc choisis de jouer le LevelFile : %s\n", iemeLevelFile(allLevel, idLevel));
 
     char* levelName = strdup(iemeLevelFile(allLevel, idLevel));

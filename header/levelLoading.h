@@ -23,6 +23,7 @@ typedef struct Level {
     int ligne;
     int colonne; 
     char** tab; 
+
 } Level; 
 
 // profil 

@@ -6,6 +6,6 @@
 #include "../header/position.h"
 
 // profil 
-bool estUnMur(Level* l, Position* p); 
+//bool estUnMur(Level* l, Position* p); 
 
 #endif

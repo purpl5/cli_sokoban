@@ -2,6 +2,8 @@
 #include "../header/player.h"
 #include "../header/levelLoading.h"
 #include "../header/position.h"
+#include "../header/jeu.h"
+
 
 Player* recherchePlayer(Level *l) {
     Player* player = (Player*) malloc(sizeof(Player));
@@ -30,18 +32,24 @@ void afficherPlayer(Player* p) {
     printf("Position du joueur : x = %d et y = %d\n", p->p->x, p->p->y);
 }
 
-/*
+void deplacementPlayerX(Level* l, FileEmplacement* f, Player* pl, int sens) {
+    if (estUnEmplacement(f, pl->p)) {
+        l->tab[pl->p->y][pl->p->x] = 'o'; 
+    } else {
+        l->tab[pl->p->y][pl->p->x] = ' '; 
+    }
 
-void deplacementPlayerX(Player* p, Level* l, int sens) {
-    l->tab[p->p->y][p->p->x] = ' '; 
-    p->p->x += sens; 
-    l->tab[p->p->y][p->p->x] = 'p'; 
+    pl->p->x += sens; 
+    l->tab[pl->p->y][pl->p->x] = 'p'; 
 }
 
-void deplacementPlayerY(Player* p, Level* l, int sens) {
-    l->tab[p->p->y][p->p->x] = ' '; 
-    p->p->y += sens; 
-    l->tab[p->p->y][p->p->x] = 'p'; 
-}
+void deplacementPlayerY(Level* l, FileEmplacement* f, Player* pl, int sens) {
+    if (estUnEmplacement(f, pl->p)) {
+        l->tab[pl->p->y][pl->p->x] = 'o'; 
+    } else {
+        l->tab[pl->p->y][pl->p->x] = ' '; 
+    }
 
-*/
+    pl->p->y += sens; 
+    l->tab[pl->p->y][pl->p->x] = 'p'; 
+}

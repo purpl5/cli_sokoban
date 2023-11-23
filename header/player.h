@@ -5,6 +5,8 @@
 // include 
 #include "../header/position.h"
 #include "../header/levelLoading.h"
+#include "../header/emplacement.h"
+
 
 // typedef
 typedef struct Player {
@@ -15,7 +17,7 @@ typedef struct Player {
 Player* recherchePlayer(Level *l);
 void freePlayer(Player* p);
 void afficherPlayer(Player* p);
-void deplacementPlayerX(Player* p, Level* l, int sens);
-void deplacementPlayerY(Player* p, Level* l, int sens);
+void deplacementPlayerY(Level* l, FileEmplacement* f, Player* p, int sens);
+void deplacementPlayerX(Level* l, FileEmplacement* f, Player* p, int sens);
 
 #endif

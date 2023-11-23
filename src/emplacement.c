@@ -17,7 +17,7 @@ FileEmplacement* ajoutEmplacement(int x, int y, FileEmplacement* f) {
     new->p = initPos(new->p, x, y); 
 
     if (emplacementVide(f)) {
-        new->next == (FileEmplacement*) NULL;
+        new->next = (FileEmplacement*) NULL;
         return new;
     }
 
@@ -60,4 +60,26 @@ void freeEmplacement(FileEmplacement* f) {
         freePos(suppr->p); 
         free(suppr);
     }
+}
+
+bool estUnEmplacement(FileEmplacement* f, Position* p) {
+    FileEmplacement * tmp = f;
+    while (tmp != (FileEmplacement*) NULL) {
+        if (tmp->p->x == p->x && tmp->p->y == p->y) {
+            return true; 
+        }
+        tmp = tmp->next; 
+    }
+
+    return false; 
+}
+
+int nbrEmplacement(FileEmplacement* f) {
+    FileEmplacement* tmp = f; 
+    int i = 0;
+    while (tmp != (FileEmplacement*) NULL) {
+        i++;
+        tmp = tmp->next; 
+    }
+    return i; 
 }

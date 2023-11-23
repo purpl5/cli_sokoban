@@ -3,7 +3,7 @@
 #define EMPLACEMENT
 
 // include 
-#include "../header/emplacement.h"
+#include "../header/base.h"
 #include "../header/position.h"
 
 // typedef 
@@ -19,5 +19,7 @@ FileEmplacement* ajoutEmplacement(int x, int y, FileEmplacement* f);
 FileEmplacement* rechercheEmplacement(Level* l);
 void afficherEmplacement(FileEmplacement* f);
 void freeEmplacement(FileEmplacement* f);
+bool estUnEmplacement(FileEmplacement* f, Position* p); 
+int nbrEmplacement(FileEmplacement* f); 
 
 #endif

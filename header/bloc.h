@@ -3,7 +3,12 @@
 #define BLOC
 
 // include 
+#include "../header/levelLoading.h"
+#include "../header/emplacement.h"
+#include "../header/player.h"
 
-// typedef
+// profil
+void deplacementBlocY(Level* l, FileEmplacement* f, Position* pl, int sens);
+void deplacementBlocX(Level* l, FileEmplacement* f, Position* pl, int sens); 
 
 #endif

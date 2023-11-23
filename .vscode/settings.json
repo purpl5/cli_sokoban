@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "levelselector.h": "c",
-        "base.h": "c"
+        "base.h": "c",
+        "jeu.h": "c",
+        "levelloading.h": "c",
+        "position.h": "c",
+        "emplacement.h": "c",
+        "player.h": "c"
     }
 }
