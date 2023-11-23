@@ -2,7 +2,10 @@
 #ifndef MUR
 #define MUR
 
+// include 
+#include "../header/position.h"
+
 // profil 
-bool estUnMur(Level* l, int x, int y); 
+bool estUnMur(Level* l, Position* p); 
 
 #endif

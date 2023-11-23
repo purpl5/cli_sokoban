@@ -13,9 +13,12 @@ int main() {
     *  l = contient tout le level au quelle on veux jouer 
     *  f = contient tout les emplacement sur lesquelle nous devons mettre des bloc (important de stocker ces informations)
     */
+   
     Level* l = loader(nomLevel);
     FileEmplacement* f = rechercheEmplacement(l); 
 
+    afficherLevel(l); 
+    afficherEmplacement(f); 
 
     // Tout les free 
     freeLevel(l);

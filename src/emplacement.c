@@ -12,14 +12,16 @@ bool emplacementVide(FileEmplacement* f) {
 
 FileEmplacement* ajoutEmplacement(int x, int y, FileEmplacement* f) {
     FileEmplacement* new = (FileEmplacement*) malloc(sizeof(FileEmplacement)); 
-
-    new->x = x; 
-    new->y = y; 
+    new->p = (Position*) malloc(sizeof(Position)); 
+    new->p->x = x; 
+    new->p->y = y; 
 
     if (emplacementVide(f)) {
         new->next == (FileEmplacement*) NULL;
         return new;
     }
+
+    new->next = NULL;
 
     FileEmplacement* tmp;
     for(tmp = f; tmp->next != (FileEmplacement*) NULL; tmp = tmp->next);
@@ -31,7 +33,7 @@ FileEmplacement* ajoutEmplacement(int x, int y, FileEmplacement* f) {
 
 FileEmplacement* rechercheEmplacement(Level* l) {
     FileEmplacement* f = newEmplacement(); 
-
+    
     for (int i = 0; i < l->ligne; i++) {
         for (int j = 0; j < l->colonne; j++) {
             if (l->tab[i][j] == 'o') {
@@ -45,7 +47,7 @@ FileEmplacement* rechercheEmplacement(Level* l) {
 
 void afficherEmplacement(FileEmplacement* f) {
     for (FileEmplacement* tmp = f; tmp != (FileEmplacement*) NULL; tmp = tmp->next) {
-        printf("x : %d et y : %d\n", tmp->x, tmp->y); 
+        printf("x : %d et y : %d\n", tmp->p->x, tmp->p->y); 
     }
 }
 
@@ -53,7 +55,7 @@ void freeEmplacement(FileEmplacement* f) {
     while (f != (FileEmplacement*) NULL) {
         FileEmplacement* suppr = f; 
         f = f->next; 
-
+        free(suppr->p);
         free(suppr);
     }
 }

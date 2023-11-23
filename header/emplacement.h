@@ -4,11 +4,11 @@
 
 // include 
 #include "../header/emplacement.h"
+#include "../header/position.h"
 
 // typedef 
 typedef struct fileEmplacement {
-    int x; 
-    int y; 
+    Position *p; 
     struct fileEmplacement *next;
 } FileEmplacement; 
 
