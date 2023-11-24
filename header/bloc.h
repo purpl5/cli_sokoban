@@ -8,7 +8,7 @@
 #include "../header/player.h"
 
 // profil
-void deplacementBlocY(Level* l, FileEmplacement* f, Position* pl, int sens);
-void deplacementBlocX(Level* l, FileEmplacement* f, Position* pl, int sens); 
+void deplacementBlocY(Level* l, FileEmplacement* f, Position* pl, int sens, int* nbBlocSurEmplacement);
+void deplacementBlocX(Level* l, FileEmplacement* f, Position* pl, int sens, int* nbBlocSurEmplacement); 
 
 #endif

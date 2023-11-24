@@ -1,24 +1,30 @@
 #include "../header/bloc.h"
 
-void deplacementBlocY(Level* l, FileEmplacement* f, Position* p, int sens) {
+void deplacementBlocY(Level* l, FileEmplacement* f, Position* p, int sens, int* nbBlocSurEmplacement) {
     if (estUnEmplacement(f, p)) {
-        l->tab[p->y][p->x] = 'o'; 
-    } else {
-        l->tab[p->y][p->x] = ' '; 
-    }
+        *nbBlocSurEmplacement = *nbBlocSurEmplacement - 1; 
+    } 
 
     p->y += sens; 
-    l->tab[p->y][p->x] = 'p'; 
+
+    if (estUnEmplacement(f, p)) {
+        *nbBlocSurEmplacement = *nbBlocSurEmplacement + 1; 
+    } 
+
+    l->tab[p->y][p->x] = 'x'; 
 
 }
 
-void deplacementBlocX(Level* l, FileEmplacement* f, Position* p, int sens) {
+void deplacementBlocX(Level* l, FileEmplacement* f, Position* p, int sens, int* nbBlocSurEmplacement) {
     if (estUnEmplacement(f, p)) {
-        l->tab[p->y][p->x] = 'o'; 
-    } else {
-        l->tab[p->y][p->x] = ' '; 
-    }
+        *nbBlocSurEmplacement = *nbBlocSurEmplacement - 1;
+    } 
 
     p->x += sens; 
-    l->tab[p->y][p->x] = 'p'; 
+
+    if (estUnEmplacement(f, p)) {
+        *nbBlocSurEmplacement = *nbBlocSurEmplacement + 1;
+    } 
+
+    l->tab[p->y][p->x] = 'x'; 
 }

@@ -1,13 +1,15 @@
 #include "../header/base.h"
 #include "../header/jeu.h"
 #include "../header/player.h"
+#include "../header/bloc.h"
 
 void gameOn(Jeu* j) {
     int i = 0; 
 
     int nbEmplacement = nbrEmplacement(j->f); 
     int* nbBlocSurEmplacement = (int*) malloc(sizeof(int));
-    while (i != 1 || nbEmplacement != *(nbBlocSurEmplacement)) {
+    *nbBlocSurEmplacement = 0; 
+    while (i != 1 && nbEmplacement != *(nbBlocSurEmplacement)) {
         char character;
         scanf("\n%c", &character);
         int sens; 
@@ -33,24 +35,27 @@ void gameOn(Jeu* j) {
             case 'z':
                 sens = -1; 
                 tabY1 = j->l->tab[j->pl->p->y - 1][j->pl->p->x]; 
-
+                
                 if (tabY1 != '#') {
                     if (tabY1 == 'x') {
                         tabY2 = j->l->tab[j->pl->p->y - 2][j->pl->p->x];
-                        if (tabY2 != '#') {
+                        if (tabY2 != '#' && tabY2 != 'x') {
+                            Position* blocPos = (Position*) malloc(sizeof(Position));
+                            blocPos->x = j->pl->p->x; 
+                            blocPos->y = j->pl->p->y - 1; 
+                            deplacementBlocY(j->l, j->f, blocPos, sens, nbBlocSurEmplacement);
+                            free(blocPos);
 
-                        } else {
-                            afficherLevel(j->l);
-                        }
+                            deplacementPlayerY(j->l, j->f, j->pl, sens); 
+                        } 
 
                     } else {
                         deplacementPlayerY(j->l, j->f, j->pl, sens); 
-                        afficherLevel(j->l);
+                        
                     }
                     
-                } else {
-                    afficherLevel(j->l);
                 }
+                
                 break;
                 
             case 'q':
@@ -60,40 +65,43 @@ void gameOn(Jeu* j) {
                 if (tabY1 != '#') {
                     if (tabY1 == 'x') {
                         tabY2 = j->l->tab[j->pl->p->y][j->pl->p->x - 2];
-                        if (tabY2 != '#') {
+                        if (tabY2 != '#' && tabY2 != 'x') {
+                            Position* blocPos = (Position*) malloc(sizeof(Position));
+                            blocPos->x = j->pl->p->x - 1; 
+                            blocPos->y = j->pl->p->y; 
+                            deplacementBlocX(j->l, j->f, blocPos, sens, nbBlocSurEmplacement);
+                            free(blocPos);
 
-                        } else {
-                            afficherLevel(j->l);
-                        }
+                            deplacementPlayerX(j->l, j->f, j->pl, sens); 
+                        } 
 
                     } else {
                         deplacementPlayerX(j->l, j->f, j->pl, sens); 
-                        afficherLevel(j->l);
+
                     }
-                } else {
-                    afficherLevel(j->l);
-                }
+                } 
                 break;
 
             case 'd':
                 sens = 1; 
                 tabX1 = j->l->tab[j->pl->p->y][j->pl->p->x  + 1];
-
                 if (tabX1 != '#') {
                     if (tabX1 == 'x') {
                         tabX2 = j->l->tab[j->pl->p->y][j->pl->p->x + 2];
-                        if (tabX2 != '#') {
 
-                        } else {
-                            afficherLevel(j->l);
+                        if (tabX2 != '#' && tabX2 != 'x') {
+                            Position* blocPos = (Position*) malloc(sizeof(Position));
+                            blocPos->x = j->pl->p->x + 1; 
+                            blocPos->y = j->pl->p->y; 
+                            deplacementBlocX(j->l, j->f, blocPos, sens, nbBlocSurEmplacement);
+                            free(blocPos);
+
+                            deplacementPlayerX(j->l, j->f, j->pl, sens); 
                         }
+
                     } else {
                         deplacementPlayerX(j->l, j->f, j->pl, sens); 
-                        afficherLevel(j->l);
                     }
-
-                } else {
-                    afficherLevel(j->l);
                 }
                 break;
 
@@ -104,30 +112,38 @@ void gameOn(Jeu* j) {
                 if (tabX1 != '#') {
                     if (tabX1 == 'x') {
                         tabX2 = j->l->tab[j->pl->p->y + 2][j->pl->p->x];
-                        if (tabX2 != '#') {
+                        if (tabX2 != '#' && tabX2 != 'x') {
+                            Position* blocPos = (Position*) malloc(sizeof(Position));
+                            blocPos->x = j->pl->p->x; 
+                            blocPos->y = j->pl->p->y + 1; 
+                            deplacementBlocY(j->l, j->f, blocPos, sens, nbBlocSurEmplacement);
+                            free(blocPos);
 
-                        } else {
-                            afficherLevel(j->l);
+                            deplacementPlayerY(j->l, j->f, j->pl, sens); 
                         }
                     } else {
                         deplacementPlayerY(j->l, j->f, j->pl, sens); 
-                        afficherLevel(j->l);
                     }
 
-                } else {
-                    afficherLevel(j->l);
                 }
                 break;  
 
             case 'l' :
                 i = 1; 
-                printf("vous avez quitter le jeux !"); 
                 break; 
 
             default:
                 break;
         }
+        afficherLevel(j->l);
+    }
+
+    if (i == 1) {
+        printf("Perdu ! Tu as quitter le jeu sans le finir !\n"); 
+    } else {
+        printf("Gagner !\n");
     }
 
     free(nbBlocSurEmplacement);
 }
+
