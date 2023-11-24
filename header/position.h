@@ -1,6 +1,8 @@
-#pragma once
-#ifndef POSITION
-#define POSITION
+#ifndef POSITION_H
+#define POSITION_H
+
+// include
+#include "base.h"
 
 // typedef 
 typedef struct Position {

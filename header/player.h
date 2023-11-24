@@ -1,12 +1,11 @@
-#pragma once
-#ifndef PLAYER
-#define PLAYER
+#ifndef PLAYER_H
+#define PLAYER_H
 
 // include 
-#include "../header/position.h"
-#include "../header/levelLoading.h"
-#include "../header/emplacement.h"
-
+#include "base.h"
+#include "position.h"
+#include "levelLoading.h"
+#include "emplacement.h"
 
 // typedef
 typedef struct Player {

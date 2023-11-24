@@ -1,9 +1,9 @@
-#include "../header/base.h"
-#include "../header/levelSelector.h"
-#include "../header/levelLoading.h"
-#include "../header/emplacement.h"
-#include "../header/player.h"
-#include "../header/jeu.h"
+#include "base.h"
+#include "levelSelector.h"
+#include "levelLoading.h"
+#include "emplacement.h"
+#include "player.h"
+#include "jeu.h"
 
 
 int main() {

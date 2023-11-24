@@ -1,5 +1,4 @@
-#include "../header/position.h"
-#include "../header/base.h"
+#include "position.h"
 
 Position* initPos(Position* p, int x, int y) {
     p = (Position*) malloc(sizeof(Position)); 

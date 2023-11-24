@@ -1,10 +1,10 @@
-#pragma once
-#ifndef EMPLACEMENT
-#define EMPLACEMENT
+#ifndef EMPLACEMENT_H
+#define EMPLACEMENT_H
 
 // include 
-#include "../header/base.h"
-#include "../header/position.h"
+#include "base.h"
+#include "position.h"
+#include "levelLoading.h"
 
 // typedef 
 typedef struct fileEmplacement {

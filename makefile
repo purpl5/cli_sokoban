@@ -1,6 +1,6 @@
 #Les variables
 CC = gcc
-CFLAGS = -W -Wall
+CFLAGS = -Iheader -W -Wall
 EXEC = main
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=obj/%.o)
@@ -34,4 +34,4 @@ clean:
 #Permets de dire au makefile que les target donner ne sont pas des "file targets" conçu pour créer des fichiers 
 #par le biais d'autres fichiers, mais juste de dire a makefile que ces target sont juste fait pour lancer des 
 #commandes. 
-.PHONY: archive clean doxygen
+.PHONY: archive clean doc

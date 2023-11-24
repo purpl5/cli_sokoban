@@ -6,6 +6,7 @@
         "levelloading.h": "c",
         "position.h": "c",
         "emplacement.h": "c",
-        "player.h": "c"
+        "player.h": "c",
+        "bloc.h": "c"
     }
 }

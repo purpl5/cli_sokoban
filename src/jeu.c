@@ -1,7 +1,8 @@
-#include "../header/base.h"
-#include "../header/jeu.h"
-#include "../header/player.h"
-#include "../header/bloc.h"
+#include "jeu.h"
+#include "levelLoading.h"
+#include "emplacement.h"
+#include "player.h"
+#include "bloc.h"
 
 void gameOn(Jeu* j) {
     int i = 0; 

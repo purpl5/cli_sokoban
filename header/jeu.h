@@ -1,12 +1,11 @@
-#pragma once 
-#ifndef JEU 
-#define JEU
+#ifndef JEU_H
+#define JEU_H
 
 // include 
-#include "../header/levelLoading.h"
-#include "../header/emplacement.h"
-#include "../header/player.h"
-#include <string.h>
+#include "base.h"
+#include "player.h"
+#include "emplacement.h"
+#include "levelLoading.h"
 
 // typedef 
 typedef struct Jeu {

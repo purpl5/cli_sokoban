@@ -1,10 +1,8 @@
-#pragma once
-#ifndef LEVEL_SELECTOR
-#define LEVEL_SELECTOR
+#ifndef LEVEL_SELECTOR_H
+#define LEVEL_SELECTOR_H
 
 // Bibliothèque spécifique au levelSelector.C
-#include <dirent.h>
-#include <string.h>
+#include "base.h"
 
 // typedef 
 

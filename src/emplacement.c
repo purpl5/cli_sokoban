@@ -1,8 +1,8 @@
-#include "../header/base.h"
-#include "../header/levelLoading.h"
-#include "../header/emplacement.h"
-#include "../header/position.h"
-#include "../header/jeu.h"
+#include "emplacement.h"
+#include "position.h"
+#include "jeu.h"
+#include "levelLoading.h"
+
 
 FileEmplacement* newEmplacement() {
     return (FileEmplacement*) NULL;

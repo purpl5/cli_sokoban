@@ -1,6 +1,5 @@
-#include "../header/base.h"
-#include "../header/levelLoading.h"
-#include "../header/os.h"
+#include "levelLoading.h"
+#include "os.h"
 
 // ---------------------------------------
 

@@ -1,5 +1,5 @@
-#include "../header/base.h"
-#include "../header/levelSelector.h"
+#include "base.h"
+#include "levelSelector.h"
 
 // ---------------------------------------
 
@@ -160,7 +160,7 @@ void freeAllLevelFile(LevelFile* list) {
 
 char* choixLevelFile() {
     LevelFile* allLevel = listLevelFile(); 
-    int idLevel; 
+    int idLevel = 0; 
 
     afficherLevelFile(allLevel); 
 

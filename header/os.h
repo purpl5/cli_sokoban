@@ -1,3 +1,6 @@
+#ifndef OS_H
+#define OS_H
+
 /*
 *  Dans le cas ou :
 *     - Windows : OS_NUMBER 0
@@ -14,4 +17,6 @@
 
 #ifdef __unix__
 #define OS_NUMBER 1
+#endif
+
 #endif

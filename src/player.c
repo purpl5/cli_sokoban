@@ -1,9 +1,8 @@
-#include "../header/base.h"
-#include "../header/player.h"
-#include "../header/levelLoading.h"
-#include "../header/position.h"
-#include "../header/jeu.h"
-
+#include "player.h"
+#include "position.h"
+#include "levelLoading.h"
+#include "emplacement.h"
+#include "jeu.h"
 
 Player* recherchePlayer(Level *l) {
     Player* player = (Player*) malloc(sizeof(Player));

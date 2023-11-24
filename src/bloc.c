@@ -1,4 +1,7 @@
-#include "../header/bloc.h"
+#include "bloc.h"
+#include "levelLoading.h"
+#include "position.h"
+#include "player.h"
 
 void deplacementBlocY(Level* l, FileEmplacement* f, Position* p, int sens, int* nbBlocSurEmplacement) {
     if (estUnEmplacement(f, p)) {

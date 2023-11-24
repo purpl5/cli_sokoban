@@ -1,9 +1,8 @@
-#pragma once 
-#ifndef LEVEL_LOADING
-#define LEVEL_LOADING
+#ifndef LEVEL_LOADING_H
+#define LEVEL_LOADING_H
 
 // include 
-#include <string.h>
+#include "base.h"
 
 // typedef 
 
