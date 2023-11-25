@@ -160,15 +160,17 @@ void gameOn() {
                 break;
         }
 
-        if (end != 2) {
+        if (end != 2 && end != 1) {
             afficherLevel(j->l);
             afficherCommande();
         }
     }
 
     if (end == 1) {
+        clearCmd();
         printf("Perdu ! Tu as quitter le jeu sans le finir !\n");
     } else if (end != 2) {
+        clearCmd();
         printf("Gagner !\n");
     }
 
@@ -183,6 +185,6 @@ void gameOn() {
 void afficherCommande() {
     printf(
         "\n%c : avancer \n%c : gauche \n%c : droite \n%c : reculer \n%c : "
-        "quitter\n%c : changer de level\n",
+        "quitter\n%c : changer de level\n\n",
         KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_DOWN, KEY_LEAVING, KEY_NEW_LEVEL);
 }
