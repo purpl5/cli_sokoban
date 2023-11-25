@@ -39,8 +39,8 @@ void gameOn(Jeu *j) {
             sens = -1;
             tabY1 = j->l->tab[j->pl->p->y - 1][j->pl->p->x];
 
-            if (tabY1 != '#') {
-                if (tabY1 == 'x') {
+            if (tabY1 != '#' ) {
+                if (tabY1 == 'x' || tabY1 == 'X') {
                     tabY2 = j->l->tab[j->pl->p->y - 2][j->pl->p->x];
                     if (tabY2 != '#' && tabY2 != 'x') {
                         Position *blocPos =
@@ -66,7 +66,7 @@ void gameOn(Jeu *j) {
             tabY1 = j->l->tab[j->pl->p->y][j->pl->p->x - 1];
 
             if (tabY1 != '#') {
-                if (tabY1 == 'x') {
+                if (tabY1 == 'x' || tabY1 == 'X') {
                     tabY2 = j->l->tab[j->pl->p->y][j->pl->p->x - 2];
                     if (tabY2 != '#' && tabY2 != 'x') {
                         Position *blocPos =
@@ -90,7 +90,7 @@ void gameOn(Jeu *j) {
             sens = 1;
             tabX1 = j->l->tab[j->pl->p->y][j->pl->p->x + 1];
             if (tabX1 != '#') {
-                if (tabX1 == 'x') {
+                if (tabX1 == 'x' || tabX1 == 'X') {
                     tabX2 = j->l->tab[j->pl->p->y][j->pl->p->x + 2];
 
                     if (tabX2 != '#' && tabX2 != 'x') {
@@ -116,7 +116,7 @@ void gameOn(Jeu *j) {
             tabX1 = j->l->tab[j->pl->p->y + 1][j->pl->p->x];
 
             if (tabX1 != '#') {
-                if (tabX1 == 'x') {
+                if (tabX1 == 'x' || tabX1 == 'X') {
                     tabX2 = j->l->tab[j->pl->p->y + 2][j->pl->p->x];
                     if (tabX2 != '#' && tabX2 != 'x') {
                         Position *blocPos =

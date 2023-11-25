@@ -13,9 +13,11 @@ void deplacementBlocY(Level *l, FileEmplacement *f, Position *p, int sens,
 
     if (estUnEmplacement(f, p)) {
         *nbBlocSurEmplacement = *nbBlocSurEmplacement + 1;
+        l->tab[p->y][p->x] = 'X';
+    } else {
+        l->tab[p->y][p->x] = 'x';
     }
 
-    l->tab[p->y][p->x] = 'x';
 }
 
 void deplacementBlocX(Level *l, FileEmplacement *f, Position *p, int sens,
@@ -28,7 +30,9 @@ void deplacementBlocX(Level *l, FileEmplacement *f, Position *p, int sens,
 
     if (estUnEmplacement(f, p)) {
         *nbBlocSurEmplacement = *nbBlocSurEmplacement + 1;
+        l->tab[p->y][p->x] = 'X';
+    } else {
+        l->tab[p->y][p->x] = 'x';
     }
 
-    l->tab[p->y][p->x] = 'x';
 }
