@@ -51,11 +51,9 @@ typedef struct Jeu {
 void gameOn();
 
 /**
- * @brief Lance et gère la boucle principale du jeu.
+ * @brief Affiche les commandes 
  *
- * Cette fonction démarre le jeu et gère la boucle de jeu principale, y compris
- * le traitement des entrées de l'utilisateur et la mise à jour de l'état du
- * jeu.
+ * Affiche toutes les commandes faisable pour jouer au jeu. 
  *
  */
 void afficherCommande();
