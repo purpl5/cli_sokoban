@@ -1,18 +1,18 @@
 #ifndef EMPLACEMENT_H
 #define EMPLACEMENT_H
 
-// include 
+// include
 #include "base.h"
-#include "position.h"
 #include "levelLoading.h"
+#include "position.h"
 
-// typedef 
+// typedef
 typedef struct fileEmplacement {
-    Position *p; 
-    struct fileEmplacement *next;
-} FileEmplacement; 
+    Position* p;
+    struct fileEmplacement* next;
+} FileEmplacement;
 
-// profil 
+// profil
 
 /**
  * @brief Crée un nouvel emplacement.
@@ -36,7 +36,8 @@ bool emplacementVide(FileEmplacement* f);
 /**
  * @brief Ajoute un emplacement.
  *
- * Ajoute un nouvel emplacement avec les coordonnées spécifiées à la liste d'emplacements.
+ * Ajoute un nouvel emplacement avec les coordonnées spécifiées à la liste
+ * d'emplacements.
  *
  * @param x Coordonnée X de l'emplacement.
  * @param y Coordonnée Y de l'emplacement.
@@ -48,7 +49,8 @@ FileEmplacement* ajoutEmplacement(int x, int y, FileEmplacement* f);
 /**
  * @brief Recherche des emplacements dans un niveau.
  *
- * Parcourt un niveau pour trouver tous les emplacements et les ajoute à une liste.
+ * Parcourt un niveau pour trouver tous les emplacements et les ajoute à une
+ * liste.
  *
  * @param l Pointeur vers le niveau à parcourir.
  * @return Pointeur vers la liste des emplacements trouvés dans le niveau.
@@ -80,9 +82,10 @@ void freeEmplacement(FileEmplacement* f);
  *
  * @param f Pointeur vers la liste des emplacements.
  * @param p Pointeur vers la position à vérifier.
- * @return Booléen indiquant si la position est un emplacement (true) ou non (false).
+ * @return Booléen indiquant si la position est un emplacement (true) ou non
+ * (false).
  */
-bool estUnEmplacement(FileEmplacement* f, Position* p); 
+bool estUnEmplacement(FileEmplacement* f, Position* p);
 
 /**
  * @brief Compte le nombre d'emplacements.
@@ -92,6 +95,6 @@ bool estUnEmplacement(FileEmplacement* f, Position* p);
  * @param f Pointeur vers la liste des emplacements.
  * @return Le nombre d'emplacements dans la liste.
  */
-int nbrEmplacement(FileEmplacement* f); 
+int nbrEmplacement(FileEmplacement* f);
 
 #endif

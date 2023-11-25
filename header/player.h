@@ -1,28 +1,29 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-// include 
+// include
 #include "base.h"
-#include "position.h"
-#include "levelLoading.h"
 #include "emplacement.h"
+#include "levelLoading.h"
+#include "position.h"
 
 // typedef
 typedef struct Player {
-    Position* p; 
+    Position* p;
 } Player;
 
-// profil 
+// profil
 
 /**
  * @brief Recherche le joueur dans un niveau.
  *
- * Cette fonction parcourt le niveau spécifié pour trouver la position du joueur.
+ * Cette fonction parcourt le niveau spécifié pour trouver la position du
+ * joueur.
  *
  * @param l Pointeur vers le niveau dans lequel rechercher le joueur.
  * @return Pointeur vers la structure du joueur contenant sa position.
  */
-Player* recherchePlayer(Level *l);
+Player* recherchePlayer(Level* l);
 
 /**
  * @brief Libère la mémoire allouée pour un joueur.

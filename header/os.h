@@ -2,10 +2,10 @@
 #define OS_H
 
 /*
-*  Dans le cas ou :
-*     - Windows : OS_NUMBER 0
-*     - Unix : (linux, Mac OS..) OS_NUMBER 1 
-*/
+ *  Dans le cas ou :
+ *     - Windows : OS_NUMBER 0
+ *     - Unix : (linux, Mac OS..) OS_NUMBER 1
+ */
 
 #ifdef _WIN32
 #define OS_NUMBER 0

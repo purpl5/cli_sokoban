@@ -35,108 +35,112 @@ void gameOn(Jeu* j) {
          */
 
         switch (character) {
-        case 'z':
-            sens = -1;
-            tabY1 = j->l->tab[j->pl->p->y - 1][j->pl->p->x];
+            case 'z':
+                sens = -1;
+                tabY1 = j->l->tab[j->pl->p->y - 1][j->pl->p->x];
 
-            if (tabY1 != '#') {
-                if (tabY1 == 'x' || tabY1 == 'X') {
-                    tabY2 = j->l->tab[j->pl->p->y - 2][j->pl->p->x];
-                    if (tabY2 != '#' && tabY2 != 'x') {
-                        Position* blocPos = (Position*)malloc(sizeof(Position));
-                        blocPos->x = j->pl->p->x;
-                        blocPos->y = j->pl->p->y - 1;
-                        deplacementBlocY(j->l, j->f, blocPos, sens,
-                                         nbBlocSurEmplacement);
-                        free(blocPos);
+                if (tabY1 != '#') {
+                    if (tabY1 == 'x' || tabY1 == 'X') {
+                        tabY2 = j->l->tab[j->pl->p->y - 2][j->pl->p->x];
+                        if (tabY2 != '#' && tabY2 != 'x') {
+                            Position* blocPos =
+                                (Position*)malloc(sizeof(Position));
+                            blocPos->x = j->pl->p->x;
+                            blocPos->y = j->pl->p->y - 1;
+                            deplacementBlocY(j->l, j->f, blocPos, sens,
+                                             nbBlocSurEmplacement);
+                            free(blocPos);
 
+                            deplacementPlayerY(j->l, j->f, j->pl, sens);
+                        }
+
+                    } else {
                         deplacementPlayerY(j->l, j->f, j->pl, sens);
                     }
-
-                } else {
-                    deplacementPlayerY(j->l, j->f, j->pl, sens);
                 }
-            }
 
-            break;
+                break;
 
-        case 'q':
-            sens = -1;
-            tabY1 = j->l->tab[j->pl->p->y][j->pl->p->x - 1];
+            case 'q':
+                sens = -1;
+                tabY1 = j->l->tab[j->pl->p->y][j->pl->p->x - 1];
 
-            if (tabY1 != '#') {
-                if (tabY1 == 'x' || tabY1 == 'X') {
-                    tabY2 = j->l->tab[j->pl->p->y][j->pl->p->x - 2];
-                    if (tabY2 != '#' && tabY2 != 'x') {
-                        Position* blocPos = (Position*)malloc(sizeof(Position));
-                        blocPos->x = j->pl->p->x - 1;
-                        blocPos->y = j->pl->p->y;
-                        deplacementBlocX(j->l, j->f, blocPos, sens,
-                                         nbBlocSurEmplacement);
-                        free(blocPos);
+                if (tabY1 != '#') {
+                    if (tabY1 == 'x' || tabY1 == 'X') {
+                        tabY2 = j->l->tab[j->pl->p->y][j->pl->p->x - 2];
+                        if (tabY2 != '#' && tabY2 != 'x') {
+                            Position* blocPos =
+                                (Position*)malloc(sizeof(Position));
+                            blocPos->x = j->pl->p->x - 1;
+                            blocPos->y = j->pl->p->y;
+                            deplacementBlocX(j->l, j->f, blocPos, sens,
+                                             nbBlocSurEmplacement);
+                            free(blocPos);
 
+                            deplacementPlayerX(j->l, j->f, j->pl, sens);
+                        }
+
+                    } else {
                         deplacementPlayerX(j->l, j->f, j->pl, sens);
                     }
-
-                } else {
-                    deplacementPlayerX(j->l, j->f, j->pl, sens);
                 }
-            }
-            break;
+                break;
 
-        case 'd':
-            sens = 1;
-            tabX1 = j->l->tab[j->pl->p->y][j->pl->p->x + 1];
-            if (tabX1 != '#') {
-                if (tabX1 == 'x' || tabX1 == 'X') {
-                    tabX2 = j->l->tab[j->pl->p->y][j->pl->p->x + 2];
+            case 'd':
+                sens = 1;
+                tabX1 = j->l->tab[j->pl->p->y][j->pl->p->x + 1];
+                if (tabX1 != '#') {
+                    if (tabX1 == 'x' || tabX1 == 'X') {
+                        tabX2 = j->l->tab[j->pl->p->y][j->pl->p->x + 2];
 
-                    if (tabX2 != '#' && tabX2 != 'x') {
-                        Position* blocPos = (Position*)malloc(sizeof(Position));
-                        blocPos->x = j->pl->p->x + 1;
-                        blocPos->y = j->pl->p->y;
-                        deplacementBlocX(j->l, j->f, blocPos, sens,
-                                         nbBlocSurEmplacement);
-                        free(blocPos);
+                        if (tabX2 != '#' && tabX2 != 'x') {
+                            Position* blocPos =
+                                (Position*)malloc(sizeof(Position));
+                            blocPos->x = j->pl->p->x + 1;
+                            blocPos->y = j->pl->p->y;
+                            deplacementBlocX(j->l, j->f, blocPos, sens,
+                                             nbBlocSurEmplacement);
+                            free(blocPos);
 
+                            deplacementPlayerX(j->l, j->f, j->pl, sens);
+                        }
+
+                    } else {
                         deplacementPlayerX(j->l, j->f, j->pl, sens);
                     }
-
-                } else {
-                    deplacementPlayerX(j->l, j->f, j->pl, sens);
                 }
-            }
-            break;
+                break;
 
-        case 's':
-            sens = 1;
-            tabX1 = j->l->tab[j->pl->p->y + 1][j->pl->p->x];
+            case 's':
+                sens = 1;
+                tabX1 = j->l->tab[j->pl->p->y + 1][j->pl->p->x];
 
-            if (tabX1 != '#') {
-                if (tabX1 == 'x' || tabX1 == 'X') {
-                    tabX2 = j->l->tab[j->pl->p->y + 2][j->pl->p->x];
-                    if (tabX2 != '#' && tabX2 != 'x') {
-                        Position* blocPos = (Position*)malloc(sizeof(Position));
-                        blocPos->x = j->pl->p->x;
-                        blocPos->y = j->pl->p->y + 1;
-                        deplacementBlocY(j->l, j->f, blocPos, sens,
-                                         nbBlocSurEmplacement);
-                        free(blocPos);
+                if (tabX1 != '#') {
+                    if (tabX1 == 'x' || tabX1 == 'X') {
+                        tabX2 = j->l->tab[j->pl->p->y + 2][j->pl->p->x];
+                        if (tabX2 != '#' && tabX2 != 'x') {
+                            Position* blocPos =
+                                (Position*)malloc(sizeof(Position));
+                            blocPos->x = j->pl->p->x;
+                            blocPos->y = j->pl->p->y + 1;
+                            deplacementBlocY(j->l, j->f, blocPos, sens,
+                                             nbBlocSurEmplacement);
+                            free(blocPos);
 
+                            deplacementPlayerY(j->l, j->f, j->pl, sens);
+                        }
+                    } else {
                         deplacementPlayerY(j->l, j->f, j->pl, sens);
                     }
-                } else {
-                    deplacementPlayerY(j->l, j->f, j->pl, sens);
                 }
-            }
-            break;
+                break;
 
-        case 'l':
-            i = 1;
-            break;
+            case 'l':
+                i = 1;
+                break;
 
-        default:
-            break;
+            default:
+                break;
         }
         afficherLevel(j->l);
     }

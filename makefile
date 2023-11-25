@@ -35,7 +35,7 @@ clean:
 	rm -rf obj doc
 
 format:
-	@for file in $(SRC); do \
+	@for file in $(SRC) $(DEPS); do \
 		clang-format -i $$file; \
 	done
 

@@ -3,7 +3,9 @@
 #include "levelLoading.h"
 #include "position.h"
 
-FileEmplacement* newEmplacement() { return (FileEmplacement*)NULL; }
+FileEmplacement* newEmplacement() {
+    return (FileEmplacement*)NULL;
+}
 
 bool emplacementVide(FileEmplacement* f) {
     return f == (FileEmplacement*)NULL ? true : false;

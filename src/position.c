@@ -8,4 +8,6 @@ Position* initPos(Position* p, int x, int y) {
     return p;
 }
 
-void freePos(Position* p) { free(p); }
+void freePos(Position* p) {
+    free(p);
+}

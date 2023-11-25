@@ -1,7 +1,9 @@
 #include "levelSelector.h"
 #include "base.h"
 
-LevelFile* newList() { return (LevelFile*)NULL; }
+LevelFile* newList() {
+    return (LevelFile*)NULL;
+}
 
 LevelFile* stockLevelFile(LevelFile* list, char* namefile) {
     LevelFile* new = (LevelFile*)malloc(sizeof(LevelFile));
