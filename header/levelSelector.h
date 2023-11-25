@@ -1,28 +1,27 @@
 #ifndef LEVEL_SELECTOR_H
 #define LEVEL_SELECTOR_H
 
-// Bibliothèque spécifique au levelSelector.C
-#include "base.h"
-
-// typedef
-
-/*
- *  Nom du type : LevelFile
- *  Contenu :
- *     - name : nom du fichier
- *     - next : c'est une liste chainée, c'est donc l'élément suivant du tableau
- *  Initialisation :
- *     - newList()
- *  Free :
- *     - freeAllLevel()
+/**
+ * @file levelSelector.h
+ * @brief Définitions et déclarations pour la sélection des niveaux dans le jeu.
+ *
+ * Ce fichier contient les structures et fonctions nécessaires pour gérer la
+ * sélection du niveau du jeu à partir d'une liste de fichiers.
  */
 
-typedef struct LevelFile {
-    char* name;
-    struct LevelFile* next;
-} LevelFile;
+#include "base.h"
 
-// Les profils
+/**
+ * @struct LevelFile
+ * @brief Structure pour représenter un fichier de niveau.
+ *
+ * Cette structure représente une liste chaînée permettant de
+ * stocker des nom de fichier.
+ */
+typedef struct LevelFile {
+    char* name;              ///< Nom du fichier de niveau.
+    struct LevelFile* next;  ///< Pointeur vers le fichier de niveau suivant.
+} LevelFile;
 
 /**
  * @brief Renvoie la liste des niveaux disponibles.

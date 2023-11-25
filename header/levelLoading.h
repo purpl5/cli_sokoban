@@ -1,31 +1,30 @@
 #ifndef LEVEL_LOADING_H
 #define LEVEL_LOADING_H
 
-// include
-#include "base.h"
-
-// typedef
-
-/*
- *  Nom du type : Level
- *  Contenu :
- *     - ligne : le nombre de ligne dans le tableau
- *     - colonne : le nombre de colonne dans le tableau
- *     - tab : tableau stockant les caractéristique du Level
- *  Initialisation :
- *     - loader()
- *  Free :
- *     - freeLevel()
+/**
+ * @file levelLoading.h
+ * @brief Définitions et fonctions pour le chargement et la gestion des niveaux
+ * du jeu.
+ *
+ * Ce fichier contient la structure Level et diverses fonctions pour créer,
+ * charger, afficher et libérer les niveaux du jeu.
  */
 
+#include "base.h"
+
+/**
+ * @struct Level
+ * @brief Structure représentant un niveau dans le jeu.
+ *
+ * Cette structure contient les données d'un niveau, y compris sa taille et
+ * le tableau représentant les différents éléments du niveau.
+ */
 typedef struct Level {
-    int ligne;
-    int colonne;
-    char** tab;
+    int ligne;    ///< Nombre de lignes du niveau.
+    int colonne;  ///< Nombre de colonnes du niveau.
+    char** tab;   ///< Tableau 2D représentant le niveau.
 
 } Level;
-
-// profil
 
 /**
  * @brief Crée un nouveau niveau.

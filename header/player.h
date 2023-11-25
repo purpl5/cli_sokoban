@@ -1,18 +1,29 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-// include
+/**
+ * @file player.h
+ * @brief Définitions et fonctions pour la gestion du joueur dans le jeu.
+ *
+ * Ce fichier contient la structure Player et diverses fonctions pour gérer
+ * les actions et l'état du joueur dans le jeu, comme la recherche, le
+ * déplacement, et l'affichage de la position du joueur.
+ */
+
 #include "base.h"
 #include "emplacement.h"
 #include "levelLoading.h"
 #include "position.h"
 
-// typedef
+/**
+ * @struct Player
+ * @brief Structure représentant le joueur dans le jeu.
+ *
+ * Cette structure contient la position actuelle du joueur.
+ */
 typedef struct Player {
-    Position* p;
+    Position* p;  ///< Pointeur vers la position actuelle du joueur.
 } Player;
-
-// profil
 
 /**
  * @brief Recherche le joueur dans un niveau.

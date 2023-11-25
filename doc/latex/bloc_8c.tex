@@ -1,0 +1,74 @@
+\hypertarget{bloc_8c}{}\doxysection{Référence du fichier src/bloc.c}
+\label{bloc_8c}\index{src/bloc.c@{src/bloc.c}}
+{\ttfamily \#include \char`\"{}bloc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}level\+Loading.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}position.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de bloc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bloc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bloc_8c_af0336f5225dd68f183384cf6ae2ae459}{deplacement\+BlocY}} (\mbox{\hyperlink{structLevel}{Level}} $\ast$l, \mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$f, \mbox{\hyperlink{structPosition}{Position}} $\ast$p, int sens, int $\ast$nb\+Bloc\+Sur\+Emplacement)
+\begin{DoxyCompactList}\small\item\em Déplace un bloc dans le niveau sur l\textquotesingle{}axe Y. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bloc_8c_ad4f8131f7b4fede843d74e8bc8c623a1}{deplacement\+BlocX}} (\mbox{\hyperlink{structLevel}{Level}} $\ast$l, \mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$f, \mbox{\hyperlink{structPosition}{Position}} $\ast$p, int sens, int $\ast$nb\+Bloc\+Sur\+Emplacement)
+\begin{DoxyCompactList}\small\item\em Déplace un bloc dans le niveau sur l\textquotesingle{}axe X. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{bloc_8c_ad4f8131f7b4fede843d74e8bc8c623a1}\label{bloc_8c_ad4f8131f7b4fede843d74e8bc8c623a1}} 
+\index{bloc.c@{bloc.c}!deplacementBlocX@{deplacementBlocX}}
+\index{deplacementBlocX@{deplacementBlocX}!bloc.c@{bloc.c}}
+\doxysubsubsection{\texorpdfstring{deplacementBlocX()}{deplacementBlocX()}}
+{\footnotesize\ttfamily void deplacement\+BlocX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLevel}{Level}} $\ast$}]{l,  }\item[{\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$}]{f,  }\item[{\mbox{\hyperlink{structPosition}{Position}} $\ast$}]{pl,  }\item[{int}]{sens,  }\item[{int $\ast$}]{nb\+Bloc\+Sur\+Emplacement }\end{DoxyParamCaption})}
+
+
+
+Déplace un bloc dans le niveau sur l\textquotesingle{}axe X. 
+
+Cette fonction modifie la position d\textquotesingle{}un bloc dans le level (représenté par \textquotesingle{}l\textquotesingle{}) en déplaçant le bloc le long de l\textquotesingle{}axe X en fonction du paramètre \textquotesingle{}sens\textquotesingle{}.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & Pointeur vers le level dans lequel le bloc est déplacé. \\
+\hline
+{\em f} & Pointeur vers la file des emplacements. \\
+\hline
+{\em pl} & Pointeur vers la position actuelle du bloc. \\
+\hline
+{\em sens} & Direction du déplacement. Les valeurs positives indiquent un déplacement vers le bas, et les valeurs négatives vers le haut. \\
+\hline
+{\em nb\+Bloc\+Sur\+Emplacement} & Pointeur vers un entier qui est mis à jour pour refléter le nombre de blocs sur les emplacement après le déplacement du bloc. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{bloc_8c_af0336f5225dd68f183384cf6ae2ae459}\label{bloc_8c_af0336f5225dd68f183384cf6ae2ae459}} 
+\index{bloc.c@{bloc.c}!deplacementBlocY@{deplacementBlocY}}
+\index{deplacementBlocY@{deplacementBlocY}!bloc.c@{bloc.c}}
+\doxysubsubsection{\texorpdfstring{deplacementBlocY()}{deplacementBlocY()}}
+{\footnotesize\ttfamily void deplacement\+BlocY (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLevel}{Level}} $\ast$}]{l,  }\item[{\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$}]{f,  }\item[{\mbox{\hyperlink{structPosition}{Position}} $\ast$}]{pl,  }\item[{int}]{sens,  }\item[{int $\ast$}]{nb\+Bloc\+Sur\+Emplacement }\end{DoxyParamCaption})}
+
+
+
+Déplace un bloc dans le niveau sur l\textquotesingle{}axe Y. 
+
+Cette fonction modifie la position d\textquotesingle{}un bloc dans le level (représenté par \textquotesingle{}l\textquotesingle{}) en déplaçant le bloc le long de l\textquotesingle{}axe Y en fonction du paramètre \textquotesingle{}sens\textquotesingle{}.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & Pointeur vers le level dans lequel le bloc est déplacé. \\
+\hline
+{\em f} & Pointeur vers la file des emplacements. \\
+\hline
+{\em pl} & Pointeur vers la position actuelle du bloc. \\
+\hline
+{\em sens} & Direction du déplacement. Les valeurs positives indiquent un déplacement vers le bas, et les valeurs négatives vers le haut. \\
+\hline
+{\em nb\+Bloc\+Sur\+Emplacement} & Pointeur vers un entier qui est mis à jour pour refléter le nombre de blocs sur les emplacement après le déplacement du bloc. \\
+\hline
+\end{DoxyParams}

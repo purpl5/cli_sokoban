@@ -1,13 +1,19 @@
 #ifndef BLOC_H
 #define BLOC_H
 
-// include
+/**
+ * @file bloc.h
+ * @brief Définitions et déclarations pour la manipulation des blocs dans le
+ * jeu.
+ *
+ * Ce fichier contient les déclarations de fonctions nécessaires pour gérer
+ * le déplacement et la manipulation des blocs dans les niveaux du jeu.
+ */
+
 #include "base.h"
 #include "emplacement.h"
 #include "levelLoading.h"
 #include "position.h"
-
-// profil
 
 /**
  * @brief Déplace un bloc dans le niveau sur l'axe Y.

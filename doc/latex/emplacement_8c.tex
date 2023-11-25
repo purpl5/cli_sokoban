@@ -1,0 +1,191 @@
+\hypertarget{emplacement_8c}{}\doxysection{Référence du fichier src/emplacement.c}
+\label{emplacement_8c}\index{src/emplacement.c@{src/emplacement.c}}
+{\ttfamily \#include \char`\"{}emplacement.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}jeu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}level\+Loading.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}position.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de emplacement.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{emplacement_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$ \mbox{\hyperlink{emplacement_8c_a2ec08e54203350a5bb6afeb842256ff4}{new\+Emplacement}} ()
+\begin{DoxyCompactList}\small\item\em Crée un nouvel emplacement. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{emplacement_8c_a57afd382182caa8d903d71cff0ec3cb0}{emplacement\+Vide}} (\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Vérifie si un emplacement est vide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$ \mbox{\hyperlink{emplacement_8c_a2558d1998d805d58579c75ca96018544}{ajout\+Emplacement}} (int x, int y, \mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Ajoute un emplacement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$ \mbox{\hyperlink{emplacement_8c_a6846be6164f6421d8a1dd0bba1512944}{recherche\+Emplacement}} (\mbox{\hyperlink{structLevel}{Level}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Recherche des emplacements dans un niveau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{emplacement_8c_a15a2706eb938852c3ef0b8495cc8cf22}{afficher\+Emplacement}} (\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Affiche les emplacements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{emplacement_8c_ac821aa2022dbc083836d122a7419d51d}{free\+Emplacement}} (\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire des emplacements. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{emplacement_8c_a4d14735e18d9c7f1228ef161129cf2d7}{est\+Un\+Emplacement}} (\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$f, \mbox{\hyperlink{structPosition}{Position}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Vérifie si une position est un emplacement. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{emplacement_8c_ae05bf40f1164ef32d1065f8ba7a64924}{nbr\+Emplacement}} (\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Compte le nombre d\textquotesingle{}emplacements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{emplacement_8c_a15a2706eb938852c3ef0b8495cc8cf22}\label{emplacement_8c_a15a2706eb938852c3ef0b8495cc8cf22}} 
+\index{emplacement.c@{emplacement.c}!afficherEmplacement@{afficherEmplacement}}
+\index{afficherEmplacement@{afficherEmplacement}!emplacement.c@{emplacement.c}}
+\doxysubsubsection{\texorpdfstring{afficherEmplacement()}{afficherEmplacement()}}
+{\footnotesize\ttfamily void afficher\+Emplacement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Affiche les emplacements. 
+
+Parcourt et affiche les emplacements contenus dans la liste spécifiée.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em f} & Pointeur vers la liste des emplacements à afficher. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{emplacement_8c_a2558d1998d805d58579c75ca96018544}\label{emplacement_8c_a2558d1998d805d58579c75ca96018544}} 
+\index{emplacement.c@{emplacement.c}!ajoutEmplacement@{ajoutEmplacement}}
+\index{ajoutEmplacement@{ajoutEmplacement}!emplacement.c@{emplacement.c}}
+\doxysubsubsection{\texorpdfstring{ajoutEmplacement()}{ajoutEmplacement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}}$\ast$ ajout\+Emplacement (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Ajoute un emplacement. 
+
+Ajoute un nouvel emplacement avec les coordonnées spécifiées à la liste d\textquotesingle{}emplacements.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Coordonnée X de l\textquotesingle{}emplacement. \\
+\hline
+{\em y} & Coordonnée Y de l\textquotesingle{}emplacement. \\
+\hline
+{\em f} & Pointeur vers le premier emplacement de la liste. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers la liste mise à jour des emplacements. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{emplacement_8c_a57afd382182caa8d903d71cff0ec3cb0}\label{emplacement_8c_a57afd382182caa8d903d71cff0ec3cb0}} 
+\index{emplacement.c@{emplacement.c}!emplacementVide@{emplacementVide}}
+\index{emplacementVide@{emplacementVide}!emplacement.c@{emplacement.c}}
+\doxysubsubsection{\texorpdfstring{emplacementVide()}{emplacementVide()}}
+{\footnotesize\ttfamily bool emplacement\+Vide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Vérifie si un emplacement est vide. 
+
+Cette fonction détermine si l\textquotesingle{}emplacement spécifié est vide.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em f} & Pointeur vers l\textquotesingle{}emplacement à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Booléen indiquant si l\textquotesingle{}emplacement est vide (true) ou non (false). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{emplacement_8c_a4d14735e18d9c7f1228ef161129cf2d7}\label{emplacement_8c_a4d14735e18d9c7f1228ef161129cf2d7}} 
+\index{emplacement.c@{emplacement.c}!estUnEmplacement@{estUnEmplacement}}
+\index{estUnEmplacement@{estUnEmplacement}!emplacement.c@{emplacement.c}}
+\doxysubsubsection{\texorpdfstring{estUnEmplacement()}{estUnEmplacement()}}
+{\footnotesize\ttfamily bool est\+Un\+Emplacement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$}]{f,  }\item[{\mbox{\hyperlink{structPosition}{Position}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une position est un emplacement. 
+
+Détermine si la position spécifiée correspond à un emplacement dans la liste.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em f} & Pointeur vers la liste des emplacements. \\
+\hline
+{\em p} & Pointeur vers la position à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Booléen indiquant si la position est un emplacement (true) ou non (false). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{emplacement_8c_ac821aa2022dbc083836d122a7419d51d}\label{emplacement_8c_ac821aa2022dbc083836d122a7419d51d}} 
+\index{emplacement.c@{emplacement.c}!freeEmplacement@{freeEmplacement}}
+\index{freeEmplacement@{freeEmplacement}!emplacement.c@{emplacement.c}}
+\doxysubsubsection{\texorpdfstring{freeEmplacement()}{freeEmplacement()}}
+{\footnotesize\ttfamily void free\+Emplacement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire des emplacements. 
+
+Libère la mémoire allouée pour tous les emplacements dans la liste.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em f} & Pointeur vers la liste des emplacements à libérer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{emplacement_8c_ae05bf40f1164ef32d1065f8ba7a64924}\label{emplacement_8c_ae05bf40f1164ef32d1065f8ba7a64924}} 
+\index{emplacement.c@{emplacement.c}!nbrEmplacement@{nbrEmplacement}}
+\index{nbrEmplacement@{nbrEmplacement}!emplacement.c@{emplacement.c}}
+\doxysubsubsection{\texorpdfstring{nbrEmplacement()}{nbrEmplacement()}}
+{\footnotesize\ttfamily int nbr\+Emplacement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Compte le nombre d\textquotesingle{}emplacements. 
+
+Compte le nombre d\textquotesingle{}emplacements dans la liste spécifiée.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em f} & Pointeur vers la liste des emplacements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le nombre d\textquotesingle{}emplacements dans la liste. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{emplacement_8c_a2ec08e54203350a5bb6afeb842256ff4}\label{emplacement_8c_a2ec08e54203350a5bb6afeb842256ff4}} 
+\index{emplacement.c@{emplacement.c}!newEmplacement@{newEmplacement}}
+\index{newEmplacement@{newEmplacement}!emplacement.c@{emplacement.c}}
+\doxysubsubsection{\texorpdfstring{newEmplacement()}{newEmplacement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}}$\ast$ new\+Emplacement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Crée un nouvel emplacement. 
+
+Cette fonction initialise un nouvel emplacement.
+
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers le nouvel emplacement créé. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{emplacement_8c_a6846be6164f6421d8a1dd0bba1512944}\label{emplacement_8c_a6846be6164f6421d8a1dd0bba1512944}} 
+\index{emplacement.c@{emplacement.c}!rechercheEmplacement@{rechercheEmplacement}}
+\index{rechercheEmplacement@{rechercheEmplacement}!emplacement.c@{emplacement.c}}
+\doxysubsubsection{\texorpdfstring{rechercheEmplacement()}{rechercheEmplacement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFileEmplacement}{File\+Emplacement}}$\ast$ recherche\+Emplacement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLevel}{Level}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Recherche des emplacements dans un niveau. 
+
+Parcourt un niveau pour trouver tous les emplacements et les ajoute à une liste.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & Pointeur vers le niveau à parcourir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers la liste des emplacements trouvés dans le niveau. 
+\end{DoxyReturn}

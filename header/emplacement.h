@@ -1,18 +1,31 @@
 #ifndef EMPLACEMENT_H
 #define EMPLACEMENT_H
 
-// include
+/**
+ * @file emplacement.h
+ * @brief Définitions et déclarations liées aux emplacements dans le jeu.
+ *
+ * Ce fichier contient les structures et fonctions liées à la gestion
+ * des emplacements dans un niveau de jeu.
+ */
+
 #include "base.h"
 #include "levelLoading.h"
 #include "position.h"
 
-// typedef
+/**
+ * @struct FileEmplacement
+ * @brief Structure représentant un emplacement dans le jeu.
+ *
+ * Cette structure est utilisée pour gérer une liste d'emplacements dans un
+ * niveau. Chaque emplacement est défini par une position et un pointeur vers
+ * l'emplacement suivant.
+ */
 typedef struct fileEmplacement {
-    Position* p;
-    struct fileEmplacement* next;
+    Position* p;  ///< Pointeur vers la position de l'emplacement.
+    struct fileEmplacement*
+        next;  ///< Pointeur vers le prochain emplacement dans la liste.
 } FileEmplacement;
-
-// profil
 
 /**
  * @brief Crée un nouvel emplacement.

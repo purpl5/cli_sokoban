@@ -1,0 +1,12 @@
+<map id="header/bloc.h" name="header/bloc.h">
+<area shape="rect" id="node1" title="Définitions et déclarations pour la manipulation des blocs dans le jeu." alt="" coords="174,5,285,32"/>
+<area shape="rect" id="node2" href="$base_8h.html" title="Définitions liées aux bibliothèques nécessaires pour le jeu." alt="" coords="209,229,274,256"/>
+<area shape="rect" id="node8" href="$emplacement_8h.html" title="Définitions et déclarations liées aux emplacements dans le jeu." alt="" coords="218,80,342,107"/>
+<area shape="rect" id="node9" href="$levelLoading_8h.html" title="Définitions et fonctions pour le chargement et la gestion des niveaux du jeu." alt="" coords="135,155,252,181"/>
+<area shape="rect" id="node10" href="$position_8h.html" title="Définitions et fonctions pour la gestion des positions dans le jeu." alt="" coords="327,155,414,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,304,77,331"/>
+<area shape="rect" id="node4" title=" " alt="" coords="101,304,184,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="208,304,275,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="299,304,370,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="394,304,465,331"/>
+</map>

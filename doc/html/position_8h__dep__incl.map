@@ -1,0 +1,13 @@
+<map id="header/position.h" name="header/position.h">
+<area shape="rect" id="node1" title="Définitions et fonctions pour la gestion des positions dans le jeu." alt="" coords="331,5,466,32"/>
+<area shape="rect" id="node2" href="$bloc_8h.html" title="Définitions et déclarations pour la manipulation des blocs dans le jeu." alt="" coords="27,155,138,181"/>
+<area shape="rect" id="node3" href="$bloc_8c.html" title=" " alt="" coords="5,229,88,256"/>
+<area shape="rect" id="node5" href="$emplacement_8h.html" title="Définitions et déclarations liées aux emplacements dans le jeu." alt="" coords="312,80,485,107"/>
+<area shape="rect" id="node7" href="$emplacement_8c.html" title=" " alt="" coords="585,304,732,331"/>
+<area shape="rect" id="node9" href="$player_8c.html" title=" " alt="" coords="461,304,557,331"/>
+<area shape="rect" id="node10" href="$player_8h.html" title="Définitions et fonctions pour la gestion du joueur dans le jeu." alt="" coords="213,155,336,181"/>
+<area shape="rect" id="node11" href="$position_8c.html" title=" " alt="" coords="747,80,855,107"/>
+<area shape="rect" id="node4" href="$jeu_8c.html" title=" " alt="" coords="161,304,237,331"/>
+<area shape="rect" id="node6" href="$jeu_8h.html" title="Définitions et déclarations pour la gestion du jeu." alt="" coords="366,229,469,256"/>
+<area shape="rect" id="node8" href="$main_8c.html" title=" " alt="" coords="283,304,373,331"/>
+</map>

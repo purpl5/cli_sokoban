@@ -1,13 +1,26 @@
 #ifndef POSITION_H
 #define POSITION_H
 
-// include
+/**
+ * @file position.h
+ * @brief Définitions et fonctions pour la gestion des positions dans le jeu.
+ *
+ * Ce fichier contient la structure Position et les fonctions associées pour
+ * initialiser, manipuler et libérer des positions dans le jeu.
+ */
+
 #include "base.h"
 
-// typedef
+/**
+ * @struct Position
+ * @brief Structure représentant une position dans le jeu.
+ *
+ * Cette structure contient les coordonnées x et y d'une position dans le jeu,
+ * utilisées pour déterminer l'emplacement des joueurs, des blocs, etc.
+ */
 typedef struct Position {
-    int x;
-    int y;
+    int x;  ///< Coordonnée X de la position.
+    int y;  ///< Coordonnée Y de la position.
 } Position;
 
 // profil

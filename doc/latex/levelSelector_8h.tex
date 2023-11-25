@@ -1,0 +1,191 @@
+\hypertarget{levelSelector_8h}{}\doxysection{Référence du fichier header/level\+Selector.h}
+\label{levelSelector_8h}\index{header/levelSelector.h@{header/levelSelector.h}}
+
+
+Définitions et déclarations pour la sélection des niveaux dans le jeu.  
+
+
+{\ttfamily \#include \char`\"{}base.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de level\+Selector.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{levelSelector_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{levelSelector_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structLevelFile}{Level\+File}}
+\begin{DoxyCompactList}\small\item\em Structure pour représenter un fichier de niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structLevelFile}{Level\+File}} \mbox{\hyperlink{levelSelector_8h_ad4c746c9965b3c047ca1d0b9c057c5d9}{Level\+File}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$ \mbox{\hyperlink{levelSelector_8h_a7cafa1bfc6e2e47a2df2e0c5322be035}{list\+Level\+File}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la liste des niveaux disponibles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$ \mbox{\hyperlink{levelSelector_8h_a136e6ea4920c442b8e5b2081eed275b4}{stock\+Level\+File}} (\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$list, char $\ast$namefile)
+\begin{DoxyCompactList}\small\item\em Stocke un fichier de niveau dans la liste chaînée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$ \mbox{\hyperlink{levelSelector_8h_a62d83eaf4c87aeb60ed04e8356fa266f}{new\+List}} ()
+\begin{DoxyCompactList}\small\item\em Crée une nouvelle liste chaînée pour les fichiers de niveau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{levelSelector_8h_a4a5ae9d465cacd2b57661c3c90d6699e}{afficher\+Level\+File}} (\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Affiche la liste des fichiers de niveau. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{levelSelector_8h_acf6dfa61e56e7f087bb3eb23e0bd728a}{ieme\+Level}} (\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$list, int i)
+\begin{DoxyCompactList}\small\item\em Renvoie le nom du i-\/ème fichier de niveau dans la liste. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{levelSelector_8h_a9a415ec84bca051945cbf9d895f5efbd}{choix\+Level\+File}} ()
+\begin{DoxyCompactList}\small\item\em Permet à l\textquotesingle{}utilisateur de choisir un fichier de niveau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{levelSelector_8h_a31a453a75fdda6b2c24c2dc65a85fc79}{free\+All\+Level\+File}} (\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire allouée pour la liste des fichiers de niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Définitions et déclarations pour la sélection des niveaux dans le jeu. 
+
+Ce fichier contient les structures et fonctions nécessaires pour gérer la sélection du niveau du jeu à partir d\textquotesingle{}une liste de fichiers. 
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{levelSelector_8h_ad4c746c9965b3c047ca1d0b9c057c5d9}\label{levelSelector_8h_ad4c746c9965b3c047ca1d0b9c057c5d9}} 
+\index{levelSelector.h@{levelSelector.h}!LevelFile@{LevelFile}}
+\index{LevelFile@{LevelFile}!levelSelector.h@{levelSelector.h}}
+\doxysubsubsection{\texorpdfstring{LevelFile}{LevelFile}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLevelFile}{Level\+File}} \mbox{\hyperlink{structLevelFile}{Level\+File}}}
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{levelSelector_8h_a4a5ae9d465cacd2b57661c3c90d6699e}\label{levelSelector_8h_a4a5ae9d465cacd2b57661c3c90d6699e}} 
+\index{levelSelector.h@{levelSelector.h}!afficherLevelFile@{afficherLevelFile}}
+\index{afficherLevelFile@{afficherLevelFile}!levelSelector.h@{levelSelector.h}}
+\doxysubsubsection{\texorpdfstring{afficherLevelFile()}{afficherLevelFile()}}
+{\footnotesize\ttfamily void afficher\+Level\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Affiche la liste des fichiers de niveau. 
+
+Parcourt la liste chaînée des fichiers de niveau et affiche leurs noms.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em list} & Pointeur vers la liste chaînée des fichiers de niveau à afficher. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{levelSelector_8h_a9a415ec84bca051945cbf9d895f5efbd}\label{levelSelector_8h_a9a415ec84bca051945cbf9d895f5efbd}} 
+\index{levelSelector.h@{levelSelector.h}!choixLevelFile@{choixLevelFile}}
+\index{choixLevelFile@{choixLevelFile}!levelSelector.h@{levelSelector.h}}
+\doxysubsubsection{\texorpdfstring{choixLevelFile()}{choixLevelFile()}}
+{\footnotesize\ttfamily char$\ast$ choix\+Level\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet à l\textquotesingle{}utilisateur de choisir un fichier de niveau. 
+
+Affiche la liste des fichiers de niveau disponibles et permet à l\textquotesingle{}utilisateur de choisir l\textquotesingle{}un d\textquotesingle{}entre eux.
+
+\begin{DoxyReturn}{Renvoie}
+Nom du fichier de niveau choisi par l\textquotesingle{}utilisateur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{levelSelector_8h_a31a453a75fdda6b2c24c2dc65a85fc79}\label{levelSelector_8h_a31a453a75fdda6b2c24c2dc65a85fc79}} 
+\index{levelSelector.h@{levelSelector.h}!freeAllLevelFile@{freeAllLevelFile}}
+\index{freeAllLevelFile@{freeAllLevelFile}!levelSelector.h@{levelSelector.h}}
+\doxysubsubsection{\texorpdfstring{freeAllLevelFile()}{freeAllLevelFile()}}
+{\footnotesize\ttfamily void free\+All\+Level\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire allouée pour la liste des fichiers de niveau. 
+
+Parcourt la liste chaînée des fichiers de niveau et libère la mémoire allouée pour chaque élément.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em list} & Pointeur vers la liste chaînée des fichiers de niveau à libérer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{levelSelector_8h_acf6dfa61e56e7f087bb3eb23e0bd728a}\label{levelSelector_8h_acf6dfa61e56e7f087bb3eb23e0bd728a}} 
+\index{levelSelector.h@{levelSelector.h}!iemeLevel@{iemeLevel}}
+\index{iemeLevel@{iemeLevel}!levelSelector.h@{levelSelector.h}}
+\doxysubsubsection{\texorpdfstring{iemeLevel()}{iemeLevel()}}
+{\footnotesize\ttfamily char$\ast$ ieme\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$}]{list,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Renvoie le nom du i-\/ème fichier de niveau dans la liste. 
+
+Accède au i-\/ème élément de la liste chaînée des fichiers de niveau et renvoie son nom.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em list} & Pointeur vers la liste chaînée des fichiers de niveau. \\
+\hline
+{\em i} & Index du fichier de niveau à récupérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Nom du i-\/ème fichier de niveau. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{levelSelector_8h_a7cafa1bfc6e2e47a2df2e0c5322be035}\label{levelSelector_8h_a7cafa1bfc6e2e47a2df2e0c5322be035}} 
+\index{levelSelector.h@{levelSelector.h}!listLevelFile@{listLevelFile}}
+\index{listLevelFile@{listLevelFile}!levelSelector.h@{levelSelector.h}}
+\doxysubsubsection{\texorpdfstring{listLevelFile()}{listLevelFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLevelFile}{Level\+File}}$\ast$ list\+Level\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie la liste des niveaux disponibles. 
+
+Cette fonction parcourt les fichiers de niveau disponibles et les stocke dans une liste chaînée.
+
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers la liste chaînée des fichiers de niveau. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{levelSelector_8h_a62d83eaf4c87aeb60ed04e8356fa266f}\label{levelSelector_8h_a62d83eaf4c87aeb60ed04e8356fa266f}} 
+\index{levelSelector.h@{levelSelector.h}!newList@{newList}}
+\index{newList@{newList}!levelSelector.h@{levelSelector.h}}
+\doxysubsubsection{\texorpdfstring{newList()}{newList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLevelFile}{Level\+File}}$\ast$ new\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Crée une nouvelle liste chaînée pour les fichiers de niveau. 
+
+Initialise une nouvelle liste chaînée vide pour stocker les fichiers de niveau.
+
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers la nouvelle liste chaînée vide. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{levelSelector_8h_a136e6ea4920c442b8e5b2081eed275b4}\label{levelSelector_8h_a136e6ea4920c442b8e5b2081eed275b4}} 
+\index{levelSelector.h@{levelSelector.h}!stockLevelFile@{stockLevelFile}}
+\index{stockLevelFile@{stockLevelFile}!levelSelector.h@{levelSelector.h}}
+\doxysubsubsection{\texorpdfstring{stockLevelFile()}{stockLevelFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLevelFile}{Level\+File}}$\ast$ stock\+Level\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLevelFile}{Level\+File}} $\ast$}]{list,  }\item[{char $\ast$}]{namefile }\end{DoxyParamCaption})}
+
+
+
+Stocke un fichier de niveau dans la liste chaînée. 
+
+Ajoute un nouveau fichier de niveau à la liste chaînée des fichiers de niveau.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em list} & Pointeur vers la liste chaînée actuelle des fichiers de niveau. \\
+\hline
+{\em namefile} & Nom du fichier de niveau à ajouter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur vers la liste chaînée mise à jour des fichiers de niveau. 
+\end{DoxyReturn}
