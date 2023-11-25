@@ -4,11 +4,11 @@
 #include "levelLoading.h"
 #include "player.h"
 
-void gameOn(Jeu *j) {
+void gameOn(Jeu* j) {
     int i = 0;
 
     int nbEmplacement = nbrEmplacement(j->f);
-    int *nbBlocSurEmplacement = (int *)malloc(sizeof(int));
+    int* nbBlocSurEmplacement = (int*)malloc(sizeof(int));
     *nbBlocSurEmplacement = 0;
     while (i != 1 && nbEmplacement != *(nbBlocSurEmplacement)) {
         char character;
@@ -43,8 +43,7 @@ void gameOn(Jeu *j) {
                 if (tabY1 == 'x' || tabY1 == 'X') {
                     tabY2 = j->l->tab[j->pl->p->y - 2][j->pl->p->x];
                     if (tabY2 != '#' && tabY2 != 'x') {
-                        Position *blocPos =
-                            (Position *)malloc(sizeof(Position));
+                        Position* blocPos = (Position*)malloc(sizeof(Position));
                         blocPos->x = j->pl->p->x;
                         blocPos->y = j->pl->p->y - 1;
                         deplacementBlocY(j->l, j->f, blocPos, sens,
@@ -69,8 +68,7 @@ void gameOn(Jeu *j) {
                 if (tabY1 == 'x' || tabY1 == 'X') {
                     tabY2 = j->l->tab[j->pl->p->y][j->pl->p->x - 2];
                     if (tabY2 != '#' && tabY2 != 'x') {
-                        Position *blocPos =
-                            (Position *)malloc(sizeof(Position));
+                        Position* blocPos = (Position*)malloc(sizeof(Position));
                         blocPos->x = j->pl->p->x - 1;
                         blocPos->y = j->pl->p->y;
                         deplacementBlocX(j->l, j->f, blocPos, sens,
@@ -94,8 +92,7 @@ void gameOn(Jeu *j) {
                     tabX2 = j->l->tab[j->pl->p->y][j->pl->p->x + 2];
 
                     if (tabX2 != '#' && tabX2 != 'x') {
-                        Position *blocPos =
-                            (Position *)malloc(sizeof(Position));
+                        Position* blocPos = (Position*)malloc(sizeof(Position));
                         blocPos->x = j->pl->p->x + 1;
                         blocPos->y = j->pl->p->y;
                         deplacementBlocX(j->l, j->f, blocPos, sens,
@@ -119,8 +116,7 @@ void gameOn(Jeu *j) {
                 if (tabX1 == 'x' || tabX1 == 'X') {
                     tabX2 = j->l->tab[j->pl->p->y + 2][j->pl->p->x];
                     if (tabX2 != '#' && tabX2 != 'x') {
-                        Position *blocPos =
-                            (Position *)malloc(sizeof(Position));
+                        Position* blocPos = (Position*)malloc(sizeof(Position));
                         blocPos->x = j->pl->p->x;
                         blocPos->y = j->pl->p->y + 1;
                         deplacementBlocY(j->l, j->f, blocPos, sens,

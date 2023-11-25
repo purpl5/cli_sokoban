@@ -1,13 +1,13 @@
 #include "levelLoading.h"
 #include "os.h"
 
-Level *newLevel(int nbColonne, int nbLigne) {
-    Level *l = (Level *)malloc(sizeof(Level));
+Level* newLevel(int nbColonne, int nbLigne) {
+    Level* l = (Level*)malloc(sizeof(Level));
 
-    l->tab = (char **)malloc(nbLigne * sizeof(char *));
+    l->tab = (char**)malloc(nbLigne * sizeof(char*));
 
     for (int n = 0; n < nbLigne; n++) {
-        l->tab[n] = (char *)malloc(nbColonne * sizeof(char));
+        l->tab[n] = (char*)malloc(nbColonne * sizeof(char));
     }
 
     l->ligne = nbLigne;
@@ -16,20 +16,20 @@ Level *newLevel(int nbColonne, int nbLigne) {
     return l;
 }
 
-char *pathFinder(char *filename) {
-    char *base = "./level/";
-    char *path =
-        (char *)malloc((strlen(base) + strlen(filename) + 1) * sizeof(char));
+char* pathFinder(char* filename) {
+    char* base = "./level/";
+    char* path =
+        (char*)malloc((strlen(base) + strlen(filename) + 1) * sizeof(char));
     strcpy(path, base);
     strcat(path, filename);
 
     return path;
 }
 
-int nbColFinder(char *filename) {
-    FILE *fichier;
+int nbColFinder(char* filename) {
+    FILE* fichier;
     int nbColonne = 0;
-    char *path = pathFinder(filename);
+    char* path = pathFinder(filename);
 
     fichier = fopen(path, "r");
 
@@ -50,10 +50,10 @@ int nbColFinder(char *filename) {
     return nbColonne;
 }
 
-int nbLigFinder(char *filename) {
-    FILE *fichier;
+int nbLigFinder(char* filename) {
+    FILE* fichier;
     int nbLigne = 1;
-    char *path = pathFinder(filename);
+    char* path = pathFinder(filename);
 
     fichier = fopen(path, "r");
 
@@ -76,7 +76,7 @@ int nbLigFinder(char *filename) {
     return nbLigne;
 }
 
-void afficherLevel(Level *l) {
+void afficherLevel(Level* l) {
     if (OS_NUMBER == 1) {
         system("clear");
     } else if (OS_NUMBER == 0) {
@@ -91,12 +91,12 @@ void afficherLevel(Level *l) {
     }
 }
 
-Level *loader(char *filename) {
-    FILE *fichier;
+Level* loader(char* filename) {
+    FILE* fichier;
     int nbLigne = nbLigFinder(filename), nbColonne = nbColFinder(filename);
 
-    Level *l = newLevel(nbColonne, nbLigne);
-    char *path = pathFinder(filename);
+    Level* l = newLevel(nbColonne, nbLigne);
+    char* path = pathFinder(filename);
 
     free(filename);
 
@@ -106,7 +106,7 @@ Level *loader(char *filename) {
 
     if (fichier == NULL) {
         printf("erreur");
-        return (Level *)NULL;
+        return (Level*)NULL;
     }
 
     char ch = fgetc(fichier);
@@ -126,7 +126,7 @@ Level *loader(char *filename) {
     return l;
 }
 
-void freeTab(Level *l) {
+void freeTab(Level* l) {
     for (int i = 0; i < l->ligne; i++) {
         free(l->tab[i]);
     }
@@ -134,7 +134,7 @@ void freeTab(Level *l) {
     free(l->tab);
 }
 
-void freeLevel(Level *l) {
+void freeLevel(Level* l) {
     freeTab(l);
     free(l);
 }

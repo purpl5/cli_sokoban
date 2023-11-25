@@ -3,8 +3,8 @@
 #include "player.h"
 #include "position.h"
 
-void deplacementBlocY(Level *l, FileEmplacement *f, Position *p, int sens,
-                      int *nbBlocSurEmplacement) {
+void deplacementBlocY(Level* l, FileEmplacement* f, Position* p, int sens,
+                      int* nbBlocSurEmplacement) {
     if (estUnEmplacement(f, p)) {
         *nbBlocSurEmplacement = *nbBlocSurEmplacement - 1;
     }
@@ -19,8 +19,8 @@ void deplacementBlocY(Level *l, FileEmplacement *f, Position *p, int sens,
     }
 }
 
-void deplacementBlocX(Level *l, FileEmplacement *f, Position *p, int sens,
-                      int *nbBlocSurEmplacement) {
+void deplacementBlocX(Level* l, FileEmplacement* f, Position* p, int sens,
+                      int* nbBlocSurEmplacement) {
     if (estUnEmplacement(f, p)) {
         *nbBlocSurEmplacement = *nbBlocSurEmplacement - 1;
     }

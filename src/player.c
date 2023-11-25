@@ -4,9 +4,9 @@
 #include "levelLoading.h"
 #include "position.h"
 
-Player *recherchePlayer(Level *l) {
-    Player *player = (Player *)malloc(sizeof(Player));
-    player->p = (Position *)NULL;
+Player* recherchePlayer(Level* l) {
+    Player* player = (Player*)malloc(sizeof(Player));
+    player->p = (Position*)NULL;
 
     for (int i = 0; i < l->ligne; i++) {
         for (int j = 0; j < l->colonne; j++) {
@@ -23,17 +23,17 @@ Player *recherchePlayer(Level *l) {
     return player;
 }
 
-void freePlayer(Player *p) {
+void freePlayer(Player* p) {
     freePos(p->p);
 
     free(p);
 }
 
-void afficherPlayer(Player *p) {
+void afficherPlayer(Player* p) {
     printf("Position du joueur : x = %d et y = %d\n", p->p->x, p->p->y);
 }
 
-void deplacementPlayerX(Level *l, FileEmplacement *f, Player *pl, int sens) {
+void deplacementPlayerX(Level* l, FileEmplacement* f, Player* pl, int sens) {
     if (estUnEmplacement(f, pl->p)) {
         l->tab[pl->p->y][pl->p->x] = 'o';
     } else {
@@ -44,7 +44,7 @@ void deplacementPlayerX(Level *l, FileEmplacement *f, Player *pl, int sens) {
     l->tab[pl->p->y][pl->p->x] = 'p';
 }
 
-void deplacementPlayerY(Level *l, FileEmplacement *f, Player *pl, int sens) {
+void deplacementPlayerY(Level* l, FileEmplacement* f, Player* pl, int sens) {
     if (estUnEmplacement(f, pl->p)) {
         l->tab[pl->p->y][pl->p->x] = 'o';
     } else {

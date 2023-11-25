@@ -1,20 +1,20 @@
 #include "levelSelector.h"
 #include "base.h"
 
-LevelFile *newList() { return (LevelFile *)NULL; }
+LevelFile* newList() { return (LevelFile*)NULL; }
 
-LevelFile *stockLevelFile(LevelFile *list, char *namefile) {
-    LevelFile *new = (LevelFile *)malloc(sizeof(LevelFile));
+LevelFile* stockLevelFile(LevelFile* list, char* namefile) {
+    LevelFile* new = (LevelFile*)malloc(sizeof(LevelFile));
     new->name = strdup(namefile);
-    new->next = (LevelFile *)NULL;
+    new->next = (LevelFile*)NULL;
 
     if (list == NULL) {
         return new;
     }
 
-    LevelFile *tmp;
+    LevelFile* tmp;
 
-    for (LevelFile *i = list; i != NULL; i = i->next) {
+    for (LevelFile* i = list; i != NULL; i = i->next) {
         if (i->next == NULL) {
             tmp = i;
         }
@@ -25,12 +25,12 @@ LevelFile *stockLevelFile(LevelFile *list, char *namefile) {
     return list;
 }
 
-LevelFile *listLevelFile() {
-    LevelFile *list = newList();
+LevelFile* listLevelFile() {
+    LevelFile* list = newList();
 
-    struct dirent *fichier;
+    struct dirent* fichier;
 
-    DIR *dir = opendir("./level");
+    DIR* dir = opendir("./level");
     if (dir == NULL) {
         return NULL;
     }
@@ -49,15 +49,15 @@ LevelFile *listLevelFile() {
     return list;
 }
 
-char *iemeLevelFile(LevelFile *list, int i) {
-    LevelFile *tmp = list;
+char* iemeLevelFile(LevelFile* list, int i) {
+    LevelFile* tmp = list;
 
     for (int n = 1; n < i; n++) {
         if (tmp == NULL) {
             printf(
                 "erreur, il n'a pas de valeur a la position %d de ceux tableau",
                 i);
-            return (char *)NULL;
+            return (char*)NULL;
         }
         tmp = tmp->next;
     }
@@ -65,16 +65,16 @@ char *iemeLevelFile(LevelFile *list, int i) {
     return tmp->name;
 }
 
-void afficherLevelFile(LevelFile *list) {
+void afficherLevelFile(LevelFile* list) {
     int i = 1;
-    for (LevelFile *tmp = list; tmp != NULL; tmp = tmp->next, i++) {
+    for (LevelFile* tmp = list; tmp != NULL; tmp = tmp->next, i++) {
         printf("%d : %s\n", i, tmp->name);
     }
 }
 
-void freeAllLevelFile(LevelFile *list) {
+void freeAllLevelFile(LevelFile* list) {
     while (list != NULL) {
-        LevelFile *suppr = list;
+        LevelFile* suppr = list;
         list = list->next;
 
         free(suppr->name);
@@ -82,8 +82,8 @@ void freeAllLevelFile(LevelFile *list) {
     }
 }
 
-char *choixLevelFile() {
-    LevelFile *allLevel = listLevelFile();
+char* choixLevelFile() {
+    LevelFile* allLevel = listLevelFile();
     int idLevel = 0;
 
     afficherLevelFile(allLevel);
@@ -91,7 +91,7 @@ char *choixLevelFile() {
     printf("Veillez choisir quelle Level vous voulez jouer :");
     scanf("\n%d", &idLevel);
 
-    char *levelName = strdup(iemeLevelFile(allLevel, idLevel));
+    char* levelName = strdup(iemeLevelFile(allLevel, idLevel));
 
     freeAllLevelFile(allLevel);
 

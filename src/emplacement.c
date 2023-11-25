@@ -3,26 +3,26 @@
 #include "levelLoading.h"
 #include "position.h"
 
-FileEmplacement *newEmplacement() { return (FileEmplacement *)NULL; }
+FileEmplacement* newEmplacement() { return (FileEmplacement*)NULL; }
 
-bool emplacementVide(FileEmplacement *f) {
-    return f == (FileEmplacement *)NULL ? true : false;
+bool emplacementVide(FileEmplacement* f) {
+    return f == (FileEmplacement*)NULL ? true : false;
 }
 
-FileEmplacement *ajoutEmplacement(int x, int y, FileEmplacement *f) {
-    FileEmplacement *new = (FileEmplacement *)malloc(sizeof(FileEmplacement));
-    new->p = (Position *)NULL;
+FileEmplacement* ajoutEmplacement(int x, int y, FileEmplacement* f) {
+    FileEmplacement* new = (FileEmplacement*)malloc(sizeof(FileEmplacement));
+    new->p = (Position*)NULL;
     new->p = initPos(new->p, x, y);
 
     if (emplacementVide(f)) {
-        new->next = (FileEmplacement *)NULL;
+        new->next = (FileEmplacement*)NULL;
         return new;
     }
 
     new->next = NULL;
 
-    FileEmplacement *tmp;
-    for (tmp = f; tmp->next != (FileEmplacement *)NULL; tmp = tmp->next)
+    FileEmplacement* tmp;
+    for (tmp = f; tmp->next != (FileEmplacement*)NULL; tmp = tmp->next)
         ;
 
     tmp->next = new;
@@ -30,8 +30,8 @@ FileEmplacement *ajoutEmplacement(int x, int y, FileEmplacement *f) {
     return f;
 }
 
-FileEmplacement *rechercheEmplacement(Level *l) {
-    FileEmplacement *f = newEmplacement();
+FileEmplacement* rechercheEmplacement(Level* l) {
+    FileEmplacement* f = newEmplacement();
 
     for (int i = 0; i < l->ligne; i++) {
         for (int j = 0; j < l->colonne; j++) {
@@ -44,9 +44,9 @@ FileEmplacement *rechercheEmplacement(Level *l) {
     return f;
 }
 
-void afficherEmplacement(FileEmplacement *f) {
+void afficherEmplacement(FileEmplacement* f) {
     int i = 0;
-    for (FileEmplacement *tmp = f; tmp != (FileEmplacement *)NULL;
+    for (FileEmplacement* tmp = f; tmp != (FileEmplacement*)NULL;
          tmp = tmp->next) {
         printf("L'emplacement %d est à la position : x : %d et y : %d\n", i,
                tmp->p->x, tmp->p->y);
@@ -54,18 +54,18 @@ void afficherEmplacement(FileEmplacement *f) {
     }
 }
 
-void freeEmplacement(FileEmplacement *f) {
-    while (f != (FileEmplacement *)NULL) {
-        FileEmplacement *suppr = f;
+void freeEmplacement(FileEmplacement* f) {
+    while (f != (FileEmplacement*)NULL) {
+        FileEmplacement* suppr = f;
         f = f->next;
         freePos(suppr->p);
         free(suppr);
     }
 }
 
-bool estUnEmplacement(FileEmplacement *f, Position *p) {
-    FileEmplacement *tmp = f;
-    while (tmp != (FileEmplacement *)NULL) {
+bool estUnEmplacement(FileEmplacement* f, Position* p) {
+    FileEmplacement* tmp = f;
+    while (tmp != (FileEmplacement*)NULL) {
         if (tmp->p->x == p->x && tmp->p->y == p->y) {
             return true;
         }
@@ -75,10 +75,10 @@ bool estUnEmplacement(FileEmplacement *f, Position *p) {
     return false;
 }
 
-int nbrEmplacement(FileEmplacement *f) {
-    FileEmplacement *tmp = f;
+int nbrEmplacement(FileEmplacement* f) {
+    FileEmplacement* tmp = f;
     int i = 0;
-    while (tmp != (FileEmplacement *)NULL) {
+    while (tmp != (FileEmplacement*)NULL) {
         i++;
         tmp = tmp->next;
     }

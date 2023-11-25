@@ -6,9 +6,9 @@
 #include "player.h"
 
 int main() {
-    char *nomLevel = choixLevelFile();
+    char* nomLevel = choixLevelFile();
 
-    Jeu *j = (Jeu *)malloc(sizeof(Jeu));
+    Jeu* j = (Jeu*)malloc(sizeof(Jeu));
 
     j->l = loader(nomLevel);
     j->f = rechercheEmplacement(j->l);
