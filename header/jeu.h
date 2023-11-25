@@ -1,6 +1,14 @@
 #ifndef JEU_H
 #define JEU_H
 
+#define KEY_UP 'z'
+#define KEY_RIGHT 'd'
+#define KEY_LEFT 'q'
+#define KEY_DOWN 's'
+#define KEY_LEAVING 'l'
+#define KEY_RESTART 'r'
+#define KEY_NEW_LEVEL 'n'
+
 /**
  * @file jeu.h
  * @brief Définitions et déclarations pour la gestion du jeu.
@@ -13,6 +21,7 @@
 #include "base.h"
 #include "emplacement.h"
 #include "levelLoading.h"
+#include "levelSelector.h"
 #include "player.h"
 
 /**
@@ -38,10 +47,17 @@ typedef struct Jeu {
  * le traitement des entrées de l'utilisateur et la mise à jour de l'état du
  * jeu.
  *
- * @param j Pointeur vers une structure de jeu contenant toutes les informations
- * nécessaires pour le jeu, y compris le niveau actuel, les emplacements et les
- * informations sur le joueur.
  */
-void gameOn(Jeu* j);
+void gameOn();
+
+/**
+ * @brief Lance et gère la boucle principale du jeu.
+ *
+ * Cette fonction démarre le jeu et gère la boucle de jeu principale, y compris
+ * le traitement des entrées de l'utilisateur et la mise à jour de l'état du
+ * jeu.
+ *
+ */
+void afficherCommande();
 
 #endif

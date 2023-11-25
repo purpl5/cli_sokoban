@@ -20,10 +20,10 @@
  * le tableau représentant les différents éléments du niveau.
  */
 typedef struct Level {
-    int ligne;    ///< Nombre de lignes du niveau.
-    int colonne;  ///< Nombre de colonnes du niveau.
-    char** tab;   ///< Tableau 2D représentant le niveau.
-
+    int ligne;       ///< Nombre de lignes du niveau.
+    int colonne;     ///< Nombre de colonnes du niveau.
+    char** tab;      ///< Tableau 2D représentant le niveau.
+    char* filename;  ///< Nom du fichier.
 } Level;
 
 /**

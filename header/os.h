@@ -29,4 +29,12 @@
 #define OS_NUMBER 1
 #endif
 
+/**
+ * @brief Lance et gère la boucle principale du jeu.
+ *
+ * Cette fonction clear l'invite de commande
+ *
+ */
+void clearCmd();
+
 #endif

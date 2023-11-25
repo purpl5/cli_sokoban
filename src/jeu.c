@@ -4,13 +4,24 @@
 #include "levelLoading.h"
 #include "player.h"
 
-void gameOn(Jeu* j) {
-    int i = 0;
+void gameOn() {
+    char* nomLevel = choixLevelFile();
+
+    Jeu* j = (Jeu*)malloc(sizeof(Jeu));
+
+    j->l = loader(nomLevel);
+    j->f = rechercheEmplacement(j->l);
+    j->pl = recherchePlayer(j->l);
+
+    afficherLevel(j->l);
+    afficherCommande();
+
+    int end = 0;
 
     int nbEmplacement = nbrEmplacement(j->f);
     int* nbBlocSurEmplacement = (int*)malloc(sizeof(int));
     *nbBlocSurEmplacement = 0;
-    while (i != 1 && nbEmplacement != *(nbBlocSurEmplacement)) {
+    while (end == 0 && nbEmplacement != *(nbBlocSurEmplacement)) {
         char character;
         scanf("\n%c", &character);
         int sens;
@@ -35,7 +46,7 @@ void gameOn(Jeu* j) {
          */
 
         switch (character) {
-            case 'z':
+            case KEY_UP:
                 sens = -1;
                 tabY1 = j->l->tab[j->pl->p->y - 1][j->pl->p->x];
 
@@ -61,7 +72,7 @@ void gameOn(Jeu* j) {
 
                 break;
 
-            case 'q':
+            case KEY_LEFT:
                 sens = -1;
                 tabY1 = j->l->tab[j->pl->p->y][j->pl->p->x - 1];
 
@@ -86,7 +97,7 @@ void gameOn(Jeu* j) {
                 }
                 break;
 
-            case 'd':
+            case KEY_RIGHT:
                 sens = 1;
                 tabX1 = j->l->tab[j->pl->p->y][j->pl->p->x + 1];
                 if (tabX1 != '#') {
@@ -111,7 +122,7 @@ void gameOn(Jeu* j) {
                 }
                 break;
 
-            case 's':
+            case KEY_DOWN:
                 sens = 1;
                 tabX1 = j->l->tab[j->pl->p->y + 1][j->pl->p->x];
 
@@ -135,21 +146,39 @@ void gameOn(Jeu* j) {
                 }
                 break;
 
-            case 'l':
-                i = 1;
+            case KEY_LEAVING:
+                end = 1;
+                break;
+
+            case KEY_NEW_LEVEL:
+                end = 2;
+                gameOn();
                 break;
 
             default:
                 break;
         }
         afficherLevel(j->l);
+        afficherCommande();
     }
 
-    if (i == 1) {
+    if (end == 1) {
         printf("Perdu ! Tu as quitter le jeu sans le finir !\n");
-    } else {
+    } else if (end != 2) {
         printf("Gagner !\n");
     }
 
+    // Tout les free
     free(nbBlocSurEmplacement);
+    freeLevel(j->l);
+    freeEmplacement(j->f);
+    freePlayer(j->pl);
+    free(j);
+}
+
+void afficherCommande() {
+    printf(
+        "\n%c : avancer \n%c : gauche \n%c : droite \n%c : reculer \n%c : "
+        "quitter\n%c : changer de level\n",
+        KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_DOWN, KEY_LEAVING, KEY_NEW_LEVEL);
 }

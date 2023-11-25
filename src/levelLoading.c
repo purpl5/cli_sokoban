@@ -77,11 +77,7 @@ int nbLigFinder(char* filename) {
 }
 
 void afficherLevel(Level* l) {
-    if (OS_NUMBER == 1) {
-        system("clear");
-    } else if (OS_NUMBER == 0) {
-        system("cls");
-    }
+    clearCmd();
 
     for (int i = 0; i < l->ligne; i++) {
         for (int j = 0; j < l->colonne; j++) {
@@ -96,6 +92,8 @@ Level* loader(char* filename) {
     int nbLigne = nbLigFinder(filename), nbColonne = nbColFinder(filename);
 
     Level* l = newLevel(nbColonne, nbLigne);
+    l->filename = strdup(filename);
+
     char* path = pathFinder(filename);
 
     free(filename);
@@ -136,5 +134,6 @@ void freeTab(Level* l) {
 
 void freeLevel(Level* l) {
     freeTab(l);
+    free(l->filename);
     free(l);
 }

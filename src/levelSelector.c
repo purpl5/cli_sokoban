@@ -1,5 +1,6 @@
 #include "levelSelector.h"
 #include "base.h"
+#include "os.h"
 
 LevelFile* newList() {
     return (LevelFile*)NULL;
@@ -85,6 +86,8 @@ void freeAllLevelFile(LevelFile* list) {
 }
 
 char* choixLevelFile() {
+    clearCmd();
+
     LevelFile* allLevel = listLevelFile();
     int idLevel = 0;
 
