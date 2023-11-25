@@ -2,6 +2,7 @@
 #include "bloc.h"
 #include "emplacement.h"
 #include "levelLoading.h"
+#include "os.h"
 #include "player.h"
 
 void gameOn() {
@@ -158,8 +159,11 @@ void gameOn() {
             default:
                 break;
         }
-        afficherLevel(j->l);
-        afficherCommande();
+
+        if (end != 2) {
+            afficherLevel(j->l);
+            afficherCommande();
+        }
     }
 
     if (end == 1) {

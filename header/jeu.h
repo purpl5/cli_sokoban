@@ -51,9 +51,9 @@ typedef struct Jeu {
 void gameOn();
 
 /**
- * @brief Affiche les commandes 
+ * @brief Affiche les commandes
  *
- * Affiche toutes les commandes faisable pour jouer au jeu. 
+ * Affiche toutes les commandes faisable pour jouer au jeu.
  *
  */
 void afficherCommande();
