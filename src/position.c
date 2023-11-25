@@ -1,13 +1,11 @@
 #include "position.h"
 
-Position* initPos(Position* p, int x, int y) {
-    p = (Position*) malloc(sizeof(Position)); 
+Position *initPos(Position *p, int x, int y) {
+    p = (Position *)malloc(sizeof(Position));
     p->x = x;
-    p->y = y; 
+    p->y = y;
 
-    return p; 
+    return p;
 }
 
-void freePos(Position* p) {
-    free(p); 
-}
+void freePos(Position *p) { free(p); }

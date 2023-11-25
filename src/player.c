@@ -1,54 +1,56 @@
 #include "player.h"
-#include "position.h"
-#include "levelLoading.h"
 #include "emplacement.h"
 #include "jeu.h"
+#include "levelLoading.h"
+#include "position.h"
 
-Player* recherchePlayer(Level *l) {
-    Player* player = (Player*) malloc(sizeof(Player));
+Player *recherchePlayer(Level *l) {
+    Player *player = (Player *)malloc(sizeof(Player));
+    player->p = (Position *)NULL;
+
     for (int i = 0; i < l->ligne; i++) {
         for (int j = 0; j < l->colonne; j++) {
             if (l->tab[i][j] == 'p') {
                 player->p = initPos(player->p, j, i);
-                return player; 
             }
         }
     }
 
     if (player == NULL) {
-        printf("erreur, aucun player trouver"); 
-        return (Player*) NULL; 
+        printf("erreur, aucun player trouver");
     }
+
+    return player;
 }
 
-void freePlayer(Player* p) {
-    freePos(p->p); 
+void freePlayer(Player *p) {
+    freePos(p->p);
 
-    free(p); 
+    free(p);
 }
 
-void afficherPlayer(Player* p) {
+void afficherPlayer(Player *p) {
     printf("Position du joueur : x = %d et y = %d\n", p->p->x, p->p->y);
 }
 
-void deplacementPlayerX(Level* l, FileEmplacement* f, Player* pl, int sens) {
+void deplacementPlayerX(Level *l, FileEmplacement *f, Player *pl, int sens) {
     if (estUnEmplacement(f, pl->p)) {
-        l->tab[pl->p->y][pl->p->x] = 'o'; 
+        l->tab[pl->p->y][pl->p->x] = 'o';
     } else {
-        l->tab[pl->p->y][pl->p->x] = ' '; 
+        l->tab[pl->p->y][pl->p->x] = ' ';
     }
 
-    pl->p->x += sens; 
-    l->tab[pl->p->y][pl->p->x] = 'p'; 
+    pl->p->x += sens;
+    l->tab[pl->p->y][pl->p->x] = 'p';
 }
 
-void deplacementPlayerY(Level* l, FileEmplacement* f, Player* pl, int sens) {
+void deplacementPlayerY(Level *l, FileEmplacement *f, Player *pl, int sens) {
     if (estUnEmplacement(f, pl->p)) {
-        l->tab[pl->p->y][pl->p->x] = 'o'; 
+        l->tab[pl->p->y][pl->p->x] = 'o';
     } else {
-        l->tab[pl->p->y][pl->p->x] = ' '; 
+        l->tab[pl->p->y][pl->p->x] = ' ';
     }
 
-    pl->p->y += sens; 
-    l->tab[pl->p->y][pl->p->x] = 'p'; 
+    pl->p->y += sens;
+    l->tab[pl->p->y][pl->p->x] = 'p';
 }

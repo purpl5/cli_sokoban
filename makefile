@@ -1,20 +1,23 @@
 #Les variables
 CC = gcc
-CFLAGS = -Iheader -W -Wall
+HEADER_POS = -Iheader
+CFLAGS = -W -Wall
 EXEC = main
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=obj/%.o)
 DEPS = $(wildcard header/*.h)
 ARCFILENAME = archive-$(shell date +%F-%H-%M-%S).tar
+SRC = $(wildcard src/*.c)
+
 
 #Compile le programme en fonction de EXEC, OBJETS, CC, LDFLAGS
 $(EXEC): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) $(HEADER_POS) -o $@ $^
 
 #Génère les fichiers .o dans un répertoire "temporaire" obj qui est créer juste avant la création des fichiers .o
 obj/%.o: src/%.c $(DEPS)
 	mkdir -p obj
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) $(HEADER_POS) -o $@ -c $<
 
 #Archive notre projet en rajoutant header, src, doc, makefile et doxyfile dans une archive contenant la date de l'archive (nom est égal à la variable ARCFILENAME) 
 archive:
@@ -31,7 +34,12 @@ clean:
 	rm -f $(EXEC)
 	rm -rf obj doc
 
+format:
+	@for file in $(SRC); do \
+		clang-format -i $$file; \
+	done
+
 #Permets de dire au makefile que les target donner ne sont pas des "file targets" conçu pour créer des fichiers 
 #par le biais d'autres fichiers, mais juste de dire a makefile que ces target sont juste fait pour lancer des 
 #commandes. 
-.PHONY: archive clean doc
+.PHONY: archive clean doc format
