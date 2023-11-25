@@ -1,6 +1,7 @@
 /**
  * @file bloc.c
- * @brief Implémentations des fonctions pour le déplacement des blocs dans le jeu.
+ * @brief Implémentations des fonctions pour le déplacement des blocs dans le
+ * jeu.
  *
  * Ce fichier contient les implémentations des fonctions définies dans bloc.h.
  */
