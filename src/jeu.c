@@ -39,7 +39,7 @@ void gameOn(Jeu *j) {
             sens = -1;
             tabY1 = j->l->tab[j->pl->p->y - 1][j->pl->p->x];
 
-            if (tabY1 != '#' ) {
+            if (tabY1 != '#') {
                 if (tabY1 == 'x' || tabY1 == 'X') {
                     tabY2 = j->l->tab[j->pl->p->y - 2][j->pl->p->x];
                     if (tabY2 != '#' && tabY2 != 'x') {

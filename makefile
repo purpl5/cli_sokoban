@@ -7,7 +7,6 @@ SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=obj/%.o)
 DEPS = $(wildcard header/*.h)
 ARCFILENAME = archive-$(shell date +%F-%H-%M-%S).tar
-SRC = $(wildcard src/*.c)
 VALGRIND_FLAG = --leak-check=full --show-leak-kinds=all --track-origins=yes 
 
 

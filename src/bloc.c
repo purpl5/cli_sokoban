@@ -17,7 +17,6 @@ void deplacementBlocY(Level *l, FileEmplacement *f, Position *p, int sens,
     } else {
         l->tab[p->y][p->x] = 'x';
     }
-
 }
 
 void deplacementBlocX(Level *l, FileEmplacement *f, Position *p, int sens,
@@ -34,5 +33,4 @@ void deplacementBlocX(Level *l, FileEmplacement *f, Position *p, int sens,
     } else {
         l->tab[p->y][p->x] = 'x';
     }
-
 }
