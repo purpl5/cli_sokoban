@@ -1,9 +1,0 @@
-<map id="header/player.h" name="header/player.h">
-<area shape="rect" id="node1" title="Définitions et fonctions pour la gestion du joueur dans le jeu." alt="" coords="261,5,383,32"/>
-<area shape="rect" id="node2" href="$jeu_8h.html" title="Définitions et déclarations pour la gestion du jeu." alt="" coords="181,80,284,107"/>
-<area shape="rect" id="node4" href="$jeu_8c.html" title=" " alt="" coords="5,155,81,181"/>
-<area shape="rect" id="node5" href="$main_8c.html" title=" " alt="" coords="277,155,367,181"/>
-<area shape="rect" id="node6" href="$player_8c.html" title=" " alt="" coords="391,155,487,181"/>
-<area shape="rect" id="node7" href="$bloc_8c.html" title=" " alt="" coords="410,80,493,107"/>
-<area shape="rect" id="node3" href="$emplacement_8c.html" title=" " alt="" coords="106,155,253,181"/>
-</map>
