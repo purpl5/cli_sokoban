@@ -1,7 +1,0 @@
-<map id="header/jeu.h" name="header/jeu.h">
-<area shape="rect" id="node1" title="Définitions et déclarations pour la gestion du jeu." alt="" coords="217,5,319,32"/>
-<area shape="rect" id="node2" href="$emplacement_8c.html" title="Implémentations des fonctions pour la gestion des emplacements dans le jeu." alt="" coords="5,80,152,107"/>
-<area shape="rect" id="node3" href="$jeu_8c.html" title="Implémentations des fonctions pour la gestion du jeu." alt="" coords="177,80,253,107"/>
-<area shape="rect" id="node4" href="$main_8c.html" title="Point d&#39;entrée principal du jeu." alt="" coords="277,80,366,107"/>
-<area shape="rect" id="node5" href="$player_8c.html" title="Implémentations des fonctions pour la gestion du joueur dans le jeu." alt="" coords="391,80,487,107"/>
-</map>
