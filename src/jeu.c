@@ -10,12 +10,12 @@
  * @brief Implémentations des fonctions pour la gestion du jeu.
  *
  * Ce fichier contient les implémentations des fonctions définies dans jeu.h.
- * Il comprend la fonction principale gameOn qui gère la boucle de jeu, y compris
- * le chargement des niveaux, la gestion des entrées du joueur, et la mise à jour
- * de l'état du jeu. Des fonctions supplémentaires comme afficherCommande pour
- * afficher les commandes disponibles sont également implémentées ici.
+ * Il comprend la fonction principale gameOn qui gère la boucle de jeu, y
+ * compris le chargement des niveaux, la gestion des entrées du joueur, et la
+ * mise à jour de l'état du jeu. Des fonctions supplémentaires comme
+ * afficherCommande pour afficher les commandes disponibles sont également
+ * implémentées ici.
  */
-
 
 void gameOn() {
     char* nomLevel = choixLevelFile();

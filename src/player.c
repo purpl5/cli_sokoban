@@ -8,10 +8,11 @@
  * @file player.c
  * @brief Implémentations des fonctions pour la gestion du joueur dans le jeu.
  *
- * Ce fichier contient les implémentations des fonctions pour la gestion du joueur,
- * y compris la recherche du joueur dans le niveau, l'affichage de sa position,
- * la libération de sa mémoire, et son déplacement sur les axes X et Y. Ces fonctions
- * sont utilisées pour contrôler et suivre le joueur dans le jeu.
+ * Ce fichier contient les implémentations des fonctions pour la gestion du
+ * joueur, y compris la recherche du joueur dans le niveau, l'affichage de sa
+ * position, la libération de sa mémoire, et son déplacement sur les axes X et
+ * Y. Ces fonctions sont utilisées pour contrôler et suivre le joueur dans le
+ * jeu.
  */
 
 Player* recherchePlayer(Level* l) {

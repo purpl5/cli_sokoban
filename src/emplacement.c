@@ -5,12 +5,13 @@
 
 /**
  * @file emplacement.c
- * @brief Implémentations des fonctions pour la gestion des emplacements dans le jeu.
+ * @brief Implémentations des fonctions pour la gestion des emplacements dans le
+ * jeu.
  *
  * Ce fichier contient les implémentations des fonctions pour créer, vérifier,
- * ajouter, rechercher, afficher, libérer, et déterminer le nombre d'emplacements,
- * ainsi que pour vérifier si une position est un emplacement. Ces fonctions
- * sont utilisées pour gérer les emplacements pour les blocs
+ * ajouter, rechercher, afficher, libérer, et déterminer le nombre
+ * d'emplacements, ainsi que pour vérifier si une position est un emplacement.
+ * Ces fonctions sont utilisées pour gérer les emplacements pour les blocs
  */
 
 FileEmplacement* newEmplacement() {

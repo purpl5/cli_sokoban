@@ -4,12 +4,14 @@
 
 /**
  * @file levelSelector.c
- * @brief Implémentations des fonctions pour la sélection des niveaux dans le jeu.
+ * @brief Implémentations des fonctions pour la sélection des niveaux dans le
+ * jeu.
  *
- * Ce fichier contient les implémentations des fonctions pour créer et gérer une liste
- * de fichiers de niveaux, permettant au joueur de choisir parmi les niveaux disponibles.
- * Il comprend des fonctions pour lister, stocker, afficher, et libérer les fichiers de niveaux,
- * ainsi que pour sélectionner un niveau spécifique à jouer.
+ * Ce fichier contient les implémentations des fonctions pour créer et gérer une
+ * liste de fichiers de niveaux, permettant au joueur de choisir parmi les
+ * niveaux disponibles. Il comprend des fonctions pour lister, stocker,
+ * afficher, et libérer les fichiers de niveaux, ainsi que pour sélectionner un
+ * niveau spécifique à jouer.
  */
 
 LevelFile* newList() {

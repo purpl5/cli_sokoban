@@ -3,12 +3,13 @@
 
 /**
  * @file levelLoading.c
- * @brief Implémentations des fonctions pour le chargement, l'affichage, et la libération des niveaux.
+ * @brief Implémentations des fonctions pour le chargement, l'affichage, et la
+ * libération des niveaux.
  *
- * Ce fichier contient les implémentations des fonctions pour créer de nouveaux niveaux,
- * charger des niveaux à partir de fichiers, afficher des niveaux, et libérer la mémoire
- * allouée pour les niveaux. Ces fonctions sont essentielles pour la gestion des
- * différents niveaux dans le jeu.
+ * Ce fichier contient les implémentations des fonctions pour créer de nouveaux
+ * niveaux, charger des niveaux à partir de fichiers, afficher des niveaux, et
+ * libérer la mémoire allouée pour les niveaux. Ces fonctions sont essentielles
+ * pour la gestion des différents niveaux dans le jeu.
  */
 
 Level* newLevel(int nbColonne, int nbLigne) {

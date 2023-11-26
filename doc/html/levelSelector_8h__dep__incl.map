@@ -1,0 +1,9 @@
+<map id="header/levelSelector.h" name="header/levelSelector.h">
+<area shape="rect" id="node1" title="Définitions et déclarations pour la sélection des niveaux dans le jeu." alt="" coords="257,5,423,32"/>
+<area shape="rect" id="node2" href="$jeu_8h.html" title="Définitions et déclarations pour la gestion du jeu." alt="" coords="217,80,319,107"/>
+<area shape="rect" id="node7" href="$levelSelector_8c.html" title="Implémentations des fonctions pour la sélection des niveaux dans le jeu." alt="" coords="343,80,483,107"/>
+<area shape="rect" id="node3" href="$emplacement_8c.html" title="Implémentations des fonctions pour la gestion des emplacements dans le jeu." alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node4" href="$jeu_8c.html" title="Implémentations des fonctions pour la gestion du jeu." alt="" coords="177,155,253,181"/>
+<area shape="rect" id="node5" href="$main_8c.html" title="Point d&#39;entrée principal du jeu." alt="" coords="277,155,366,181"/>
+<area shape="rect" id="node6" href="$player_8c.html" title="Implémentations des fonctions pour la gestion du joueur dans le jeu." alt="" coords="391,155,487,181"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Jeu" name="Jeu">
+<area shape="rect" id="node1" title="Structure représentant l&#39;état global du jeu." alt="" coords="144,184,187,211"/>
+<area shape="rect" id="node2" href="$structPlayer.html" title="Structure représentant le joueur dans le jeu." alt="" coords="11,95,74,121"/>
+<area shape="rect" id="node3" href="$structPosition.html" title="Structure représentant une position dans le jeu." alt="" coords="5,5,80,32"/>
+<area shape="rect" id="node4" href="$structFileEmplacement.html" title="Structure représentant un emplacement dans le jeu." alt="" coords="98,95,233,121"/>
+<area shape="rect" id="node5" href="$structLevel.html" title="Structure représentant un niveau dans le jeu." alt="" coords="257,95,314,121"/>
+</map>

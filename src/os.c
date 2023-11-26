@@ -3,10 +3,12 @@
 
 /**
  * @file os.c
- * @brief Implémentations des fonctions pour la gestion de la compatibilité entre systèmes d'exploitation.
+ * @brief Implémentations des fonctions pour la gestion de la compatibilité
+ * entre systèmes d'exploitation.
  *
- * Ce fichier contient les implémentations des fonctions pour assurer la compatibilité
- * entre différents systèmes d'exploitation, actuellement juste pour gérer le clear du cmd.
+ * Ce fichier contient les implémentations des fonctions pour assurer la
+ * compatibilité entre différents systèmes d'exploitation, actuellement juste
+ * pour gérer le clear du cmd.
  */
 
 void clearCmd() {
