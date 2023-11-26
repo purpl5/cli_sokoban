@@ -1,12 +1,58 @@
 #ifndef JEU_H
 #define JEU_H
 
+/** @def KEY_UP
+ *  @brief Touche pour se déplacer vers le haut.
+ *
+ *  Cette macro définit la touche utilisée pour déplacer le joueur ou le curseur
+ *  vers le haut dans le jeu.
+ */
 #define KEY_UP 'z'
+
+/** @def KEY_RIGHT
+ *  @brief Touche pour se déplacer vers la droite.
+ *
+ *  Cette macro définit la touche utilisée pour déplacer le joueur ou le curseur
+ *  vers la droite dans le jeu.
+ */
 #define KEY_RIGHT 'd'
+
+/** @def KEY_LEFT
+ *  @brief Touche pour se déplacer vers la gauche.
+ *
+ *  Cette macro définit la touche utilisée pour déplacer le joueur ou le curseur
+ *  vers la gauche dans le jeu.
+ */
 #define KEY_LEFT 'q'
+
+/** @def KEY_DOWN
+ *  @brief Touche pour se déplacer vers le bas.
+ *
+ *  Cette macro définit la touche utilisée pour déplacer le joueur ou le curseur
+ *  vers le bas dans le jeu.
+ */
 #define KEY_DOWN 's'
+
+/** @def KEY_LEAVING
+ *  @brief Touche pour quitter le jeu.
+ *
+ *  Cette macro définit la touche utilisée pour quitter le jeu.
+ */
 #define KEY_LEAVING 'l'
+
+/** @def KEY_RESTART
+ *  @brief Touche pour redémarrer le niveau actuel.
+ *
+ *  Cette macro définit la touche utilisée pour redémarrer le niveau actuel.
+ */
 #define KEY_RESTART 'r'
+
+/** @def KEY_NEW_LEVEL
+ *  @brief Touche pour charger un nouveau niveau.
+ *
+ *  Cette macro définit la touche utilisée pour charger un nouveau niveau dans
+ * le jeu.
+ */
 #define KEY_NEW_LEVEL 'n'
 
 /**
